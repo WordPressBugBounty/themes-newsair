@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsair-free-magazine-blog-wordpre
 Author: Themeansar
 Author URI: http://themeansar.com
 Description: Newsair WordPress theme ideal for a business or blog website (corporate, Consulting, Advisor, Agency, Finance, law, Photography etc.). You can also use for anything. It comes with all features these kind of shop page, blog page.The theme you can use for any business website.
-Version: 1.0.0.58
+Version: 1.0.0.59
 Tested up to: 6.6
 Requires PHP: 7.0
 Requires at least: 5.4
@@ -3687,6 +3687,10 @@ form.wp-block-search__button-inside.wp-block-search__text-button.wp-block-search
 .small.single a:hover, p a:hover, .small.single .wp-block-button__link, .site-title a, .small.single .nav-links a, .small.single .single-nav-links a, a, .site-title-footer a, .small.single .wp-block-latest-posts li a, .small.single .wp-block-categories-list li a, .small.single .wp-block-categories__list li a, .small.single .wp-block-archives-list li a, .bs-footer-copyright p a, .page-class .bs-card-box a:hover, .small.single .post-share-icons a {
 	text-decoration: none;
 }
+/* footer */
+footer .bs-widget-title .title:before{
+	display: none;
+}
 /* --------------------------------------
 =========================================
 	Responsive part
@@ -3871,5 +3875,11 @@ form.wp-block-search__button-inside.wp-block-search__text-button.wp-block-search
 	}
 	.page-entry-title {
 		flex-direction: column;
+	}
+	.comments-area .comment-body {
+		padding: 100px 0px 25px 25px;
+	}
+	.comment-list .children {
+		margin-right: 1rem;
 	}
 }
