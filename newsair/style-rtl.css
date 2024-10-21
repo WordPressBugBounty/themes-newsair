@@ -2404,6 +2404,9 @@ footer .small-post-list-widget .small-post:nth-child(3){
 .bs-info-author-block.py-4.px-3.mb-4{
 	border-radius: 5px;
 }
+.bs-info-author-block .bs-blog-meta span a {
+    display: inline-block;
+}
 /*----- comments -----*/
 .bs-blog-post img{ max-width: 100%; height: auto;}
 .comment-list {
@@ -2427,7 +2430,7 @@ footer .small-post-list-widget .small-post:nth-child(3){
     position: relative;
     padding: 0;
     margin: 0;
-    margin-left: 2.5rem;
+    margin-right: 2.5rem;
     z-index: 0;
     list-style: none;
 }
@@ -2454,6 +2457,9 @@ footer .small-post-list-widget .small-post:nth-child(3){
     align-items: flex-start;
     -ms-flex-direction: row;
     flex-direction: row;
+}
+.comments-area .comment-meta .fn a{
+	display: inline-block;
 }
 .comment-meta .comment-metadata {  
 	display: flex;
