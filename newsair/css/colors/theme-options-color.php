@@ -89,13 +89,18 @@ function theme_options_color() {
 <?php } 
  
 function custom_typography_function() { ?>
-	<style>
+	<style>	:root{
+		--title-font: <?php echo esc_attr(get_theme_mod('site_title_fontfamily','Inter Tight')); ?>;
+		--title-weight: <?php echo esc_attr(get_theme_mod('site_title_fontweight','700')); ?>;
+		--menus-font: <?php echo esc_attr(get_theme_mod('newsair_menu_fontfamily','Inter Tight')); ?>;
+	}
+
 	.site-branding-text p, .bs-default .site-branding-text .site-title, .bs-default .site-branding-text .site-title a{
-		font-weight:<?php echo esc_attr(get_theme_mod('site_title_fontweight','700')); ?>;
-		font-family:<?php echo esc_attr(get_theme_mod('site_title_fontfamily','Inter Tight')); ?>; 
+		font-weight: var(--title-weight);
+		font-family: var(--title-font);
 	}
 	.navbar-wp .navbar-nav > li> a, .navbar-wp .dropdown-menu > li > a{ 
-		font-family:<?php echo esc_attr(get_theme_mod('newsair_menu_fontfamily','Inter Tight')); ?>; 
+		font-family: var(--menus-font);
 	}
 	</style>
 <?php }

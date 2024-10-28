@@ -66,6 +66,9 @@
 	}
 	
 	customizePreviewStyle('body_background_color', ':root', '--wrap-color', '');
+	customizePreviewStyle('site_title_fontfamily', ':root', '--title-font', '');
+	customizePreviewStyle('site_title_fontweight', ':root', '--title-weight', '');
+	customizePreviewStyle('newsair_menu_fontfamily', ':root', '--menus-font', '');
 
 	customizePreviewStyle('newsair_title_fontsize_desktop', '.site-title a', 'font-size','px');
 	customizePreviewStyle('newsair_title_fontsize_tablet', '.site-title a', 'font-size','px');

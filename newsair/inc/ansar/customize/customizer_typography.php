@@ -1,6 +1,6 @@
 <?php function newsair_typography_customizer( $wp_customize ) {
-    $newsair_default = newsair_get_default_theme_options();
 
+    $newsair_default = newsair_get_default_theme_options();
     $wp_customize->add_section( 'newsair_typography_setting', array(
             'priority'       => 28,
             'capability'     => 'edit_theme_options',
@@ -9,7 +9,6 @@
     );
 
     //========== Typography ===============//
-
     $wp_customize->add_setting( 'enable_custom_typography',
         array(
             'default' => false,
@@ -29,7 +28,6 @@
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-
     $wp_customize->add_control(
         new newsair_Section_Title(
             $wp_customize,
@@ -51,6 +49,7 @@
             'default'           =>  'Inter Tight',
             'capability'        =>  'edit_theme_options',
             'sanitize_callback' =>  'sanitize_text_field',
+            'transport' => 'postMessage',
         )   
     );
     $wp_customize->add_control('site_title_fontfamily', array(
@@ -67,6 +66,7 @@
             'default'           =>  '700',
             'capability'        =>  'edit_theme_options',
             'sanitize_callback' =>  'sanitize_text_field',
+            'transport' => 'postMessage',
         )   
     );
     $wp_customize->add_control('site_title_fontweight', array(
@@ -77,13 +77,11 @@
         'choices'=>$font_weight,
     ));
 
-
     $wp_customize->add_setting('newsair_menu_font',
         array(
             'sanitize_callback' => 'sanitize_text_field',
         )
     );
-
     $wp_customize->add_control(
         new newsair_Section_Title(
             $wp_customize,
@@ -101,6 +99,7 @@
             'default'           =>  'Inter Tight',
             'capability'        =>  'edit_theme_options',
             'sanitize_callback' =>  'sanitize_text_field',
+            'transport' => 'postMessage',
         )   
     );
     $wp_customize->add_control('newsair_menu_fontfamily', array(
@@ -110,7 +109,7 @@
         'type'    =>  'select',
         'choices'=>$font_family,
     ));
-
 }
 add_action( 'customize_register', 'newsair_typography_customizer' );
+
 ?>
