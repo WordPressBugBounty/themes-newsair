@@ -12,8 +12,7 @@
  *
  * @return array
  */
-function newsair_body_classes($classes)
-{
+function newsair_body_classes($classes) {
     // Adds a class of hfeed to non-singular pages.
     if (!is_singular()) {
         $classes[] = 'hfeed';
@@ -69,8 +68,7 @@ add_filter('body_class', 'newsair_body_classes');
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function newsair_pingback_header()
-{
+function newsair_pingback_header(){
     if (is_singular() && pings_open()) {
         echo '<link rel="pingback" href="', esc_url(get_bloginfo('pingback_url')), '">';
     }
@@ -85,9 +83,7 @@ add_action('wp_head', 'newsair_pingback_header');
  * @since newsair 1.0.0
  */
 if (!function_exists('newsair_get_posts')):
-    function newsair_get_posts($number_of_posts, $category = '0', $order = '') 
-    {   
-        
+    function newsair_get_posts($number_of_posts, $category = '0', $order = '') {      
        
         $ins_args = array(
             'post_type' => 'post',
@@ -117,8 +113,7 @@ endif;
  * @since  newsair 1.0.0
  */
 if (!function_exists('newsair_post_format')):
-    function newsair_post_format($post_id)
-    {
+    function newsair_post_format($post_id) {
         $post_format = get_post_format($post_id);
         switch ($post_format) {
             case "image":
@@ -151,9 +146,7 @@ if (!function_exists('newsair_get_block')) :
      * @since newsair 1.0.0
      *
      */
-    function newsair_get_block($block = 'grid', $section = 'post')
-    {
-
+    function newsair_get_block($block = 'grid', $section = 'post') {
         get_template_part('inc/ansar/hooks/blocks/block-' . $section, $block);
 
     }
@@ -221,9 +214,7 @@ add_action('newsair_action_archive_page_title', 'newsair_archive_page_title');
  *
  * @return Boolean
  */
-function newsair_list_popular_taxonomies($taxonomy = 'post_tag', $title = "Top Tags", $number = 5)
-{
-    
+function newsair_list_popular_taxonomies($taxonomy = 'post_tag', $title = "Top Tags", $number = 5){   
 
     $show_popular_tags_section = esc_attr(get_theme_mod('show_popular_tags_section',true));
     $show_popular_tags_title = get_theme_mod('show_popular_tags_title', esc_html('Top Tags'));
@@ -267,8 +258,7 @@ function newsair_list_popular_taxonomies($taxonomy = 'post_tag', $title = "Top T
  *
  * @return mixed|string
  */
-function newsair_get_freatured_image_url($post_id, $size = 'newsair-featured')
-{
+function newsair_get_freatured_image_url($post_id, $size = 'newsair-featured') {
     if (has_post_thumbnail($post_id)) {
         $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), $size);
         $url = $thumb !== false ? '' . $thumb[0] . '' : '""';
@@ -282,8 +272,7 @@ function newsair_get_freatured_image_url($post_id, $size = 'newsair-featured')
 }
 
 if (!function_exists('newsair_categories_show')):
-    function newsair_categories_show()
-{ ?>
+    function newsair_categories_show() { ?>
 <div class="bs-blog-category"> 
         <?php   $cat_list = get_the_category_list();
         if(!empty($cat_list)) { ?>
@@ -294,26 +283,24 @@ if (!function_exists('newsair_categories_show')):
 
 if (!function_exists('newsair_edit_link')) :
 
-    function newsair_edit_link($view = 'default')
-    {
+    function newsair_edit_link($view = 'default')  {
         global $post;
-            edit_post_link(
-                sprintf(
-                    wp_kses(
-                    /* translators: %s: Name of current post. Only visible to screen readers */
-                        __('Edit <span class="screen-reader-text">%s</span>', 'newsair'),
-                        array(
-                            'span' => array(
-                                'class' => array(),
-                            ),
-                        )
-                    ),
-                    get_the_title()
+        edit_post_link(
+            sprintf(
+                wp_kses(
+                /* translators: %s: Name of current post. Only visible to screen readers */
+                    __('Edit <span class="screen-reader-text">%s</span>', 'newsair'),
+                    array(
+                        'span' => array(
+                            'class' => array(),
+                        ),
+                    )
                 ),
-                '<span class="edit-link"><i class="fas fa-edit"></i>',
-                '</span>'
-            );
-
+                get_the_title()
+            ),
+            '<span class="edit-link"><i class="fas fa-edit"></i>',
+            '</span>'
+        );
     } 
 endif;
 
@@ -330,14 +317,13 @@ function newsair_date_display_type() {
             echo date_i18n('D. M jS, Y ', strtotime(current_time("Y-m-d"))); ?>
             </span>
         </div>
-    <?php } elseif( $newsair_date_time_show_type == 'wordpress_date_setting')
-    { ?>
+    <?php } elseif( $newsair_date_time_show_type == 'wordpress_date_setting') { ?>
         <div class="top-date ms-1">
             <span class="day">
              <?php echo date_i18n( get_option( 'date_format' ) ); ?>
             </span>
         </div>
-   <?php }
+    <?php }
 } }
 
 add_filter( 'woocommerce_show_page_title', 'newsair_hide_shop_page_title' );
@@ -347,8 +333,7 @@ function newsair_hide_shop_page_title( $title ) {
     return $title;
 }
 
-function newsair_footer_logo_size()
-{
+function newsair_footer_logo_size(){
     ?>
     <style>
         footer .bs-footer-bottom-area .custom-logo{

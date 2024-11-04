@@ -44,7 +44,6 @@ if ( ! function_exists( 'newsair_date_content' ) ) :
         <span class="bs-blog-date">
             <a href="<?php echo esc_url(get_month_link(esc_html(get_post_time('Y')),esc_html(get_post_time('m')))); ?>"><time datetime=""><?php echo get_the_date('M'); ?> <?php echo get_the_date('j,'); ?> <?php echo get_the_date('Y'); ?></time></a>
         </span>
-
     <?php } else{ ?>
         <span class="bs-blog-date">
             <a href="<?php echo esc_url(get_month_link(esc_html(get_post_time('Y')),esc_html(get_post_time('m')))); ?>"><time datetime=""><?php echo esc_html(get_the_date()); ?></time></a>
@@ -199,29 +198,19 @@ if( ! function_exists( 'newsair_breadcrumb' ) ) :
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <?php if($newsair_site_breadcrumb_type == 'yoast') {
-                                        if( function_exists( 'yoast_breadcrumb' ) )
-                                        {
+                                        if( function_exists( 'yoast_breadcrumb' ) ) {
                                             yoast_breadcrumb();
                                         }
                                     }
-
-                                    elseif($newsair_site_breadcrumb_type == 'navxt')
-                                    {
-                                        if( function_exists( 'bcn_display' ) )
-                                        {
+                                    elseif($newsair_site_breadcrumb_type == 'navxt') {
+                                        if( function_exists( 'bcn_display' ) ) {
                                             bcn_display();
                                         }
-                                        
                                     }
-
-                                    elseif($newsair_site_breadcrumb_type == 'rankmath')
-                                    {
-                                        if( function_exists( 'rank_math_the_breadcrumbs' ) )
-                                        {
+                                    elseif($newsair_site_breadcrumb_type == 'rankmath') {
+                                        if( function_exists( 'rank_math_the_breadcrumbs' ) ) {
                                             rank_math_the_breadcrumbs();
-                                        }
-
-                                        
+                                        }                                        
                                     }
                                     else {
                                         do_action( 'newsair_breadcrumb_trail_content' );
@@ -254,8 +243,7 @@ endif;
 
 if (!function_exists('newsair_page_pagination')) :
 
-    function newsair_page_pagination()
-    {
+    function newsair_page_pagination() {
         ?>
              <div class="col-md-12 text-center d-md-flex justify-content-between">
             <?php //Previous / next page navigation
@@ -271,5 +259,97 @@ if (!function_exists('newsair_page_pagination')) :
             <div class="navigation"><p><?php posts_nav_link(); ?></p></div>
         </div>
         <?php
+    }
+endif;
+
+if ( ! function_exists( 'newsair_header_right_nav_content' ) ) :
+    function newsair_header_right_nav_content() { 
+        newsair_header_search();
+        newsair_header_dark_switcher();
+        newsair_header_subs();
+        newsair_header_cart();
+        newsair_header_sidebar();
+    }
+endif;
+
+if ( ! function_exists( 'newsair_header_search' ) ) :
+    function newsair_header_search() {
+        $newsair_menu_search  = get_theme_mod('newsair_menu_search',true); 
+        if($newsair_menu_search == true) { ?>
+          <a class="msearch ml-auto" data-bs-target="#exampleModal"  href="#" data-bs-toggle="modal"> 
+            <i class="fas fa-search"></i> 
+          </a>
+        <?php }
+    }
+endif;
+
+if ( ! function_exists( 'newsair_header_dark_switcher' ) ) :
+    function newsair_header_dark_switcher() {
+        $newsair_lite_dark_switcher = get_theme_mod('newsair_lite_dark_switcher',true);
+        if($newsair_lite_dark_switcher == true){ 
+          if ( isset( $_COOKIE["newsair-site-mode-cookie"] ) ) {
+            $newsair_skin_mode = $_COOKIE["newsair-site-mode-cookie"];
+          } else {
+            $newsair_skin_mode = get_theme_mod( 'newsair_skin_mode', 'defaultcolor' );
+          } ?>
+          <label class="switch" for="switch">
+            <input type="checkbox" name="theme" id="switch" class="<?php echo esc_attr( $newsair_skin_mode ); ?>" data-skin-mode="<?php echo esc_attr( $newsair_skin_mode ); ?>">
+            <span class="slider"></span>
+          </label>
+        <?php }
+    }
+endif;
+
+if ( ! function_exists( 'newsair_header_subs' ) ) :
+    function newsair_header_subs() {
+        $subsc_link = get_theme_mod('newsair_subsc_link', '#'); 
+        $newsair_menu_subscriber  = get_theme_mod('newsair_menu_subscriber',true);
+        $subsc_icon  = get_theme_mod('subsc_icon_layout','play');
+        $subsc_open_in_new  = get_theme_mod('subsc_open_in_new',true) == true ? ' target="_blank"':'';
+        $subs_title  = get_theme_mod('subs_news_title','Subscribe');
+
+        if($newsair_menu_subscriber == true) { ?> 
+            <a href="<?php echo esc_url($subsc_link) ?>" class="subscribe-btn"<?php echo esc_attr($subsc_open_in_new) ?>>
+            <i class="fas fa-<?php echo esc_html($subsc_icon) ?>"></i> 
+            <?php if(!empty($subs_title)){
+                echo '<span>'.$subs_title.'</span>';
+            } ?>
+            </a>
+        <?php } 
+    }
+endif;
+
+if ( ! function_exists( 'newsair_header_cart' ) ) :
+    function newsair_header_cart() {
+        if( class_exists( 'WooCommerce' ) ) { 
+        $enable_cart  = get_theme_mod('newsair_cart_enable',1);
+            if($enable_cart == 1){ ?>
+                <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="bs-cart" > 
+                    <span class='bs-cart-total'>
+                        <?php echo WC()->cart->get_cart_subtotal(); ?>
+                    </span> 
+                    <span class="bs-cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    </span>
+                    <span class='bs-cart-count'>
+                        <?php echo WC()->cart->get_cart_contents_count(); ?>
+                    </span>
+                </a>
+            <?php
+            } 
+        }  
+    }
+endif;
+
+if ( ! function_exists( 'newsair_header_sidebar' ) ) :
+    function newsair_header_sidebar() {
+        $newsair_menu_sidebar  = get_theme_mod('newsair_menu_sidebar',true);
+        if($newsair_menu_sidebar == true){ ?>
+            <!-- Off Canvas -->
+            <a href="#" class="mneu-sidebar offcbtn d-none d-lg-block" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" role="button" aria-controls="offcanvas-start" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </a>
+            <!-- /Off Canvas -->
+        <?php }
     }
 endif;

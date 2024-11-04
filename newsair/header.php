@@ -42,27 +42,22 @@ if(is_home() || is_front_page()) {
     echo'<!--top tags start-->';        
         newsair_list_popular_taxonomies($select_popular_tags_mode, $show_popular_tags_title, $number_of_popular_tags);
     echo'<!--top tags end-->';
-    ?>
-
-<?php if($newsair_enable_main_slider){ ?>
-<!--mainfeatured start-->
-<div class="mainfeatured<?php if (!empty($main_banner_section_background_image)) { echo ' over mt-0'; } echo esc_attr($popular_tags);?>">
-    <div class="featinner">
-        <!--container-->
-        <div class="container">
-            <!--row-->
-             <div class="row gx-1<?php echo esc_attr($slider_position);?>">              
-                <?php
-                    do_action('newsair_action_front_page_main_section_1');
-                ?>  
-            </div><!--/row-->
-        </div><!--/container-->
+    if($newsair_enable_main_slider){ ?>
+    <!--mainfeatured start-->
+    <div class="mainfeatured<?php if (!empty($main_banner_section_background_image)) { echo ' over mt-0'; } echo esc_attr($popular_tags);?>">
+        <div class="featinner">
+            <!--container-->
+            <div class="container">
+                <!--row-->
+                <div class="row gx-1<?php echo esc_attr($slider_position);?>">              
+                    <?php
+                        do_action('newsair_action_front_page_main_section_1');
+                    ?>  
+                </div><!--/row-->
+            </div><!--/container-->
+        </div>
     </div>
-</div>
-<!--mainfeatured end-->
-<?php } do_action('newsair_action_posts_crowsel');
-if(is_active_sidebar('magazine-content')){
- get_template_part('sidebar','magazine');
-}
-do_action('newsair_action_featured_ads_section');
+    <!--mainfeatured end-->
+    <?php } do_action('newsair_action_posts_crowsel');
+    do_action('newsair_action_featured_ads_section');
 } ?>
