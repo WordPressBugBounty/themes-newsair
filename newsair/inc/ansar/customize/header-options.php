@@ -458,6 +458,7 @@ $wp_customize->add_setting('newsair_menu_search',
     array(
         'default' => true,
         'sanitize_callback' => 'newsair_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new newsair_Toggle_Control( $wp_customize, 'newsair_menu_search', 
@@ -472,6 +473,7 @@ $wp_customize->add_setting('newsair_lite_dark_switcher',
     array(
         'default' => true,
         'sanitize_callback' => 'newsair_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new newsair_Toggle_Control( $wp_customize, 'newsair_lite_dark_switcher', 
@@ -505,6 +507,7 @@ $wp_customize->add_setting('newsair_menu_subscriber',
     array(
         'default' => true,
         'sanitize_callback' => 'newsair_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new newsair_Toggle_Control( $wp_customize, 'newsair_menu_subscriber', 
@@ -519,7 +522,8 @@ $wp_customize->add_control(new newsair_Toggle_Control( $wp_customize, 'newsair_m
 $wp_customize->add_setting(
     'subsc_icon_layout', array(
     'default' => 'play',
-    'sanitize_callback' => 'newsair_sanitize_radio'
+    'sanitize_callback' => 'newsair_sanitize_radio',
+    'transport' => 'postMessage',
 ) );
 $wp_customize->add_control(
     new Newsair_Custom_Radio_Default_Image_Control( 
@@ -563,6 +567,7 @@ $wp_customize->add_setting('newsair_subsc_link',
     array(
         'default'           => '#',
         'sanitize_callback' => 'esc_url_raw',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control('newsair_subsc_link',
@@ -580,6 +585,7 @@ $wp_customize->add_setting('subsc_open_in_new',
     array(
         'default' => true,
         'sanitize_callback' => 'newsair_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new newsair_Toggle_Control( $wp_customize, 'subsc_open_in_new', 
@@ -614,6 +620,7 @@ if( class_exists( 'WooCommerce' ) ) {
         array(
             'default' => true,
             'sanitize_callback' => 'newsair_sanitize_checkbox',
+            'transport' => 'postMessage',
         )
     );
     $wp_customize->add_control(new newsair_Toggle_Control( $wp_customize, 'newsair_cart_enable', 
@@ -648,6 +655,7 @@ $wp_customize->add_setting('newsair_menu_sidebar',
     array(
         'default' => true,
         'sanitize_callback' => 'newsair_sanitize_checkbox',
+        'transport' => 'postMessage',
     )
 );
 $wp_customize->add_control(new newsair_Toggle_Control( $wp_customize, 'newsair_menu_sidebar', 
