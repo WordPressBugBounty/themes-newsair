@@ -95,7 +95,13 @@ if (!function_exists('newsair_post_meta')) :
             if($newsair_global_comment_enable == true) { ?>
                 <span class="comments-link"> 
                     <a href="<?php the_permalink(); ?>">
-                        <?php echo get_comments_number(); ?> <?php esc_html_e( get_comments_number() <= 1 ? __('Comment', 'newsair') : __('Comments', 'newsair')); ?>
+                        <?php
+                        if ( get_comments_number() == 0 ) {
+                            esc_html_e(  __('No Comments', 'newsair') );
+                        } else {
+                            echo get_comments_number() . ' ';
+                            esc_html_e( get_comments_number() == 1 ? __('Comment', 'newsair') : __('Comments', 'newsair') );
+                        } ?>
                     </a>
                 </span>
             <?php } ?>
