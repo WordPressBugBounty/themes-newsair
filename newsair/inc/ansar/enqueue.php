@@ -72,6 +72,10 @@ function newsair_custom_js() {
 
 	wp_enqueue_script('newsair_custom-js', get_template_directory_uri() . '/js/custom.js' , array('jquery'));
 
+    $enable_custom_typography = get_theme_mod('enable_custom_typography',false);
+    if( $enable_custom_typography == 'true') {
+		custom_typography_function();
+    }
 }
 add_action('wp_footer','newsair_custom_js');
 
@@ -93,36 +97,6 @@ function newsair_skip_link_focus_fix() {
 }
 add_action( 'wp_print_footer_scripts', 'newsair_skip_link_focus_fix' );
 
-//Footer widget text color
-function newsair_footer_text_color()
-{
-$newsair_footer_text_color = get_theme_mod('newsair_footer_text_color');
-if($newsair_footer_text_color) { ?>
-	<style>
-		footer .bs-widget p, .site-branding-text .site-title-footer a, .site-branding-text .site-title-footer a:hover, .site-branding-text .site-description-footer, .site-branding-text .site-description-footer:hover, footer .bs-widget h6, footer .mg_contact_widget .bs-widget h6{
-			color: <?php echo esc_attr($newsair_footer_text_color); ?>;
-		}
-
-	</style>
-<?php }
-$newsair_footer_copy_bg = get_theme_mod('newsair_footer_copy_bg');
-if($newsair_footer_copy_bg){ ?>
-	<style>
-		footer .bs-footer-copyright .copyright-overlay{
-    		background: <?php echo esc_attr($newsair_footer_copy_bg); ?>;
-		}
-	</style>
-<?php }
-$newsair_footer_copy_text = get_theme_mod('newsair_footer_copy_text');
-if($newsair_footer_copy_text){ ?>
-	<style>
-		footer .bs-footer-copyright p, footer .bs-footer-copyright a {
-    		color: <?php echo esc_attr($newsair_footer_copy_text); ?>;
-		}
-	</style>
-<?php } }
-add_action('wp_footer','newsair_footer_text_color');
-
 if ( ! function_exists( 'newsair_admin_scripts' ) ) :
 	function newsair_admin_scripts() {
 		wp_enqueue_script( 'newsair-admin-script', get_template_directory_uri() . '/inc/ansar/customizer-admin/js/newsair-admin-script.js', array( 'jquery' ), '', true );
@@ -133,12 +107,3 @@ if ( ! function_exists( 'newsair_admin_scripts' ) ) :
 	}
 endif;
 add_action( 'admin_enqueue_scripts', 'newsair_admin_scripts' );
-
-//Custom Typography Enable
-function enable_custom_typography() {
-    $enable_custom_typography = get_theme_mod('enable_custom_typography',false);
-    if( $enable_custom_typography == 'true') {
-		custom_typography_function();
-    }
-}
-add_action('wp_footer','enable_custom_typography');

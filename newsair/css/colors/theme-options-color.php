@@ -43,6 +43,16 @@ function theme_options_color() {
 	.homebtn a {
 		color: <?php echo esc_attr($menu_area_bg_color); ?>;
 	}
+	/*==================== Footer color ====================*/
+	footer .bs-widget p, .site-branding-text .site-title-footer a, .site-branding-text .site-title-footer a:hover, .site-branding-text .site-description-footer, .site-branding-text .site-description-footer:hover, footer .bs-widget h6, footer .mg_contact_widget .bs-widget h6{
+		color: <?php echo esc_attr(get_theme_mod('newsair_footer_text_color')); ?>;
+	}
+	footer .bs-footer-copyright .copyright-overlay{
+		background: <?php echo esc_attr(get_theme_mod('newsair_footer_copy_bg')); ?>;
+	}
+	footer .bs-footer-copyright p, footer .bs-footer-copyright a {
+		color: <?php echo esc_attr(get_theme_mod('newsair_footer_copy_text')); ?>;
+	}
 	@media (max-width: 991.98px)  { 
 		.bs-default .bs-menu-full{
 			background: var(--box-color);
