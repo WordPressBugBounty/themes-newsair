@@ -285,9 +285,9 @@ class newsair_social_section_upgrade extends WP_Customize_Control {
     public function render_content() { ?>
         <div class="upgrade-to-pro-box customizer_newsair_social_upgrade_to_pro" style="display: none;">
             <h3 class="upgrade-to-pro-title">
-            <span class="title"><span class="dashicons dashicons-warning"></span><?php echo esc_html('To Add More','newsair'); ?></span><br>
+            <span class="title"><span class="dashicons dashicons-warning"></span><?php esc_html_e('To Add More','newsair'); ?></span><br>
                 <a class="btn" href="<?php echo esc_url( 'https://themeansar.com/themes/newsair-pro/' ); ?>" target="_blank">
-                    <?php echo esc_html('Upgrade to Pro','newsair'); ?> 
+                    <?php esc_html_e('Upgrade to Pro','newsair'); ?> 
                 </a>  
             </h3>
         </div>

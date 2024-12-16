@@ -217,7 +217,6 @@ add_action('newsair_action_archive_page_title', 'newsair_archive_page_title');
 function newsair_list_popular_taxonomies($taxonomy = 'post_tag', $title = "Top Tags", $number = 5){   
 
     $show_popular_tags_section = esc_attr(get_theme_mod('show_popular_tags_section',true));
-    $show_popular_tags_title = get_theme_mod('show_popular_tags_title', esc_html('Top Tags'));
     if($show_popular_tags_section == true){
         $popular_taxonomies = get_terms(array(
             'taxonomy' => $taxonomy,

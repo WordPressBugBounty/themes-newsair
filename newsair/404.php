@@ -14,7 +14,7 @@ get_header(); ?>
       <div class="col-md-12 text-center bs-section"> 
         <!--mg-error-404-->
         <div class="bs-error-404">
-          <h1><?php echo esc_html('4','newsair'); ?><i class="fa fa-ban"></i>4</h1>
+          <h1><?php esc_html_e('4','newsair'); ?><i class="fa fa-ban"></i><?php esc_html_e('4','newsair'); ?></h1>
           <h4><?php echo esc_html(get_theme_mod('newsair_404_title', 'Oops! Page not found')); ?></h4>
           <p><?php echo esc_html(get_theme_mod('newsair_404_desc','We are sorry, but the page you are looking for does not exist.')); ?></p>
           <a href="<?php echo esc_url(home_url());?>" onClick="history.back();" class="btn btn-theme">

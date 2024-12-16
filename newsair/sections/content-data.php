@@ -13,7 +13,7 @@
         <?php newsair_post_meta(); ?>
         <?php newsair_posted_content(); ?>
         <?php if ($newsair_readmore_excerpt=="excerpt") { ?>
-            <a href="<?php the_permalink();?>" class="more-link"><?php echo esc_html('Read More', 'newsair'); ?></a>
+            <a href="<?php the_permalink();?>" class="more-link"><?php esc_html_e('Read More', 'newsair'); ?></a>
         <?php } ?>
     </article>
 </div>

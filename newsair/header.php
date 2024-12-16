@@ -25,7 +25,7 @@ else
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 <a class="skip-link screen-reader-text" href="#content">
-<?php echo esc_html( 'Skip to content', 'newsair' ); ?></a>
+<?php esc_html_e( 'Skip to content', 'newsair' ); ?></a>
 
 <!--wrapper-->
 <div class="wrapper" id="custom-background-css">
