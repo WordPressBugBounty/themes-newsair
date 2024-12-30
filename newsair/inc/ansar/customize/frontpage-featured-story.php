@@ -130,12 +130,6 @@ $wp_customize->add_setting('featured_story_title_fontsize_mobile',array(
     'sanitize_callback' => 'absint',
 
 ));
-$wp_customize->add_setting( 'general_header_image_height',
-    array(
-        'default' => 200,
-        'sanitize_callback' => 'absint'
-    )
-);
 $wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'featured_story_title_font_size', 
     array(
         'label' => __('Title Font Size','newsair'),

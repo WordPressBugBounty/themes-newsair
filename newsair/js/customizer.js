@@ -74,8 +74,13 @@
 	customizePreviewStyle('newsair_title_fontsize_tablet', '.site-title a', 'font-size','px');
 	customizePreviewStyle('newsair_title_fontsize_mobile', '.site-title a', 'font-size','px');
 
+	customizePreviewStyle('desktop_header_image_height', '.bs-default .bs-header-main .inner, .bs-headthree .bs-header-main .inner', 'height','px');
+	customizePreviewStyle('tablet_header_image_height', '.bs-default .bs-header-main .inner, .bs-headthree .bs-header-main .inner', 'height','px');
+	customizePreviewStyle('mobile_header_image_height', '.bs-default .bs-header-main .inner, .bs-headthree .bs-header-main .inner', 'height','px');
+
 	customizePreviewStyle('top_bar_header_background_color', '.bs-head-detail, .bs-headtwo .bs-head-detail, .mg-latest-news .bn_title', 'background','');
 	customizePreviewStyle('menu_area_bg_color', '.bs-default .bs-menu-full', 'background','');
+	customizePreviewStyle('newsair_header_overlay_color', '.bs-default .bs-header-main .inner', 'background-color','');
 	customizePreviewStyle('newsair_footer_copy_bg', 'footer .bs-footer-copyright .copyright-overlay', 'background','');
 	customizePreviewStyle('newsair_footer_copy_text', 'footer .bs-footer-copyright p, footer .bs-footer-copyright a', 'color','');
 	
