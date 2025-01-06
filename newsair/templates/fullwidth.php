@@ -10,12 +10,13 @@
  * @package newsair
  */
 get_header(); ?>
-<main id="content">
+<main id="content" class="full-width-class content">
   <div class="container">
+    <!--==================== breadcrumb section ====================-->
+    <?php do_action('newsair_breadcrumb_content'); ?>
     <div class="row">
-      <!--==================== breadcrumb section ====================-->
-      <?php do_action('newsair_breadcrumb_content'); ?>
-      <div class="col-md-12 mg-card-box padding-20">
+      <div class="col-md-12">
+      <div class="bs-card-box padding-20">
       <?php while ( have_posts() ) : the_post();
 				the_content(); 
 				// If comments are open or we have at least one comment, load up the comment template.
@@ -23,6 +24,7 @@ get_header(); ?>
 					comments_template();
 				endif;
 			endwhile; // End of the loop. ?>
+      </div>
       </div>
     </div>
   </div>
