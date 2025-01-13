@@ -4,8 +4,8 @@ Author: Themeansar
 Requires at least: WordPress 5.4
 Tested up to: WordPress 6.7
 Requires PHP: 7.4
-Stable tag: 1.0.0.69
-Version: 1.0.0.69
+Stable tag: 1.0.0.70
+Version: 1.0.0.70
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -331,5 +331,8 @@ Source: https://stocksnap.io/photo/train-station-6FHSE43K4R
 = Version 1.0.0.68
 * Added Selective Refresh to Header Image.
 
-= Version 1.0.0.68
+= Version 1.0.0.69
 * Fixed Full Width Page Issue.
+
+= Version 1.0.0.70
+* Fixed Full Width Page Brradcrumb Issue.
