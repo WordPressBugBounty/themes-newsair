@@ -55,7 +55,12 @@ function newsair_deprecated_hook_admin_notice() {
                         </div>
                         </div>
                         <div class="newsair-notice_image">
-                             <img class="newsair-screenshot" src="<?php echo esc_url( get_theme_file_uri() . '/images/newsair.customize.webp' ); ?>" alt="<?php esc_attr_e( 'Newsair', 'newsair' ); ?>" />
+                        <?php 
+                        $image_url = get_theme_file_uri( '/images/newsair.customize.webp' );
+                        // Check if the file exists
+                        if ( file_exists( get_theme_file_path( '/images/newsair.customize.webp' ) ) ) { ?>
+                            <img class="newsair-screenshot" src="<?php echo esc_url( $image_url ); ?>" alt="<?php esc_attr_e( 'Newsair', 'newsair' ); ?>" />
+                        <?php } ?>
                         </div>
                     </div>
                 </div>
