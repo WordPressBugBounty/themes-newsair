@@ -81,7 +81,6 @@ function newsair_get_default_theme_options() {
     $defaults['main_banner_section_background_image']= '';
     $defaults['select_editor_choice_category'] = 0;
 
-
     //Featured Ads Section
     $defaults['show_editors_pick_section'] = 1;
     $defaults['frontpage_content_alignment'] = 'align-content-left';

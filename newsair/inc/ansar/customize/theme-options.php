@@ -25,7 +25,6 @@ require get_template_directory() . '/inc/ansar/customize/frontpage-options.php';
  * @package newsair
  */
 
-
 //========== Add General Options Panel. ===============
 $wp_customize->add_panel('general_option_panel',
     array(
@@ -138,7 +137,6 @@ $wp_customize->add_control(new Newsair_Toggle_Control( $wp_customize, 'newsair_s
         'label' => esc_html__('Hide / Show', 'newsair'),
         'type' => 'toggle',
         'section' => 'scroller_options',
-        
     )
 ));
 
@@ -357,10 +355,10 @@ $wp_customize->add_control(
     )
 );
 $wp_customize->add_setting('newsair_pagination_remove',
-array(
-    'default' => true,
-    'sanitize_callback' => 'newsair_sanitize_checkbox',
-)
+    array(
+        'default' => true,
+        'sanitize_callback' => 'newsair_sanitize_checkbox',
+    )
 );
 $wp_customize->add_control(new Newsair_Toggle_Control( $wp_customize, 'newsair_pagination_remove', 
     array(
@@ -400,11 +398,11 @@ $wp_customize->add_control(
 
 // Single Page category
 $wp_customize->add_setting('newsair_single_post_category',
-array(
-    'default' => true,
-    'transport' => 'postMessage',
-    'sanitize_callback' => 'newsair_sanitize_checkbox',
-)
+    array(
+        'default' => true,
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'newsair_sanitize_checkbox',
+    )
 );
 $wp_customize->add_control(new Newsair_Toggle_Control( $wp_customize, 'newsair_single_post_category', 
     array(

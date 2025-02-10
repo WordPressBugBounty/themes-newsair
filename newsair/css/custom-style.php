@@ -13,23 +13,23 @@
   }
   if ( has_header_image() ) { $background_image = get_header_image(); } 
   if(!empty($main_banner_section_background_image)){ ?>
-<style>
-.mainfeatured {
-  background-image: url("<?php echo esc_attr( get_main_banner_section_background_image_url() ); ?>"); 
-}
-.mainfeatured .featinner {
-  padding-bottom: 30px;
-  padding-top: 30px;
-  background-color: rgba(18,16,38,0.6);
-}
-.mainfeatured {
-  margin-top: 0;
-  margin-bottom: 40px;
-}
-section.mg-tpt-tag-area.mb-n4 {
-  margin-bottom: 0;
-}
-</style>
+  <style>
+    .mainfeatured {
+      background-image: url("<?php echo esc_attr( get_main_banner_section_background_image_url() ); ?>"); 
+    }
+    .mainfeatured .featinner {
+      padding-bottom: 30px;
+      padding-top: 30px;
+      background-color: rgba(18,16,38,0.6);
+    }
+    .mainfeatured {
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+    section.mg-tpt-tag-area.mb-n4 {
+      margin-bottom: 0;
+    }
+  </style>
 <?php } ?>
 <style>
 .bs-header-main {

@@ -139,18 +139,16 @@ $wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'newsa
     'label' => __('Logo Width', 'newsair' ),
     'section' => 'footer_options',
     'settings' => [
-
-    'desktop_input' => 'desktop_newsair_footer_logo_width',
-    'tablet_input' => 'tablet_newsair_footer_logo_width',
-    'mobile_input' => 'mobile_newsair_footer_logo_width',
+        'desktop_input' => 'desktop_newsair_footer_logo_width',
+        'tablet_input' => 'tablet_newsair_footer_logo_width',
+        'mobile_input' => 'mobile_newsair_footer_logo_width',
     ],
     'is_responsive' => true,
     'input_attrs' => array(
-    'min' => 0,
-    'max' => 500,
-    'step' => 1,
-    ),
-    
+            'min' => 0,
+            'max' => 500,
+            'step' => 1,
+        ),
 ) ) );
 
 // For Desktop   

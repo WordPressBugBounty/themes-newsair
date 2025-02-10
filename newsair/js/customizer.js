@@ -124,6 +124,17 @@
 			console.log(newVal);
 		} );
 	} );
+	// Featured Slider Position
+	wp.customize( 'main_slider_position', function( value ) {
+		value.bind( function( newVal ) {
+			if(newVal !== ''){
+				$('.mainfeatured .row.gx-1').addClass('flex-row-reverse');
+			}else{
+				$('.mainfeatured .row.gx-1').removeClass('flex-row-reverse');
+			}
+		});
+	});
+
 	// Footer Background Image
 	wp.customize( 'newsair_footer_widget_background', function( value ) {
 		value.bind( function( newVal ) {

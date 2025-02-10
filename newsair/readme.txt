@@ -342,3 +342,7 @@ Source: https://stocksnap.io/photo/train-station-6FHSE43K4R
 
 = Version 1.0.0.72
 * Fixed Customize Image URL
+
+= Version 1.0.0.73
+* Added Selective Refresh on Featured Slider.
+* Fixed Code. 

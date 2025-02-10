@@ -33,7 +33,6 @@ $wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'newsa
         'max' => 1200,
         'step' => 1,
     ),
-    
 ) ) );
 
 $wp_customize->add_setting(
@@ -72,7 +71,6 @@ $wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'newsa
         'max' => 1200,
         'step' => 1,
     ),
-    
 ) ) );   
 
 //Theme Layout

@@ -123,7 +123,8 @@ $wp_customize->add_control('show_main_banner_section',
 $wp_customize->add_setting(
     'main_slider_position', array(
     'default'           => 'left',
-    'sanitize_callback' => 'newsair_sanitize_radio'
+    'sanitize_callback' => 'newsair_sanitize_radio',
+    'transport' => 'postMessage',
 ) );
 $wp_customize->add_control(
     new Newsair_Custom_Radio_Default_Image_Control( 
