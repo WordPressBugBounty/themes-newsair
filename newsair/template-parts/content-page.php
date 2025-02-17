@@ -24,19 +24,14 @@
 				<?php get_sidebar();?>
 			</aside>
 		<?php } ?>
-		<?php if($newsair_page_layout == "page-align-content-right") { ?>
-			<div class="col-md-8 content-right">
-		<?php } elseif($newsair_page_layout == "page-align-content-left") { ?>
-			<div class="col-md-8 content-right">
-		<?php } elseif($newsair_page_layout == "page-full-width-content") { ?>
-			<div class="col-md-12">
-		<?php } ?>
+		<div class="<?php echo esc_attr(($newsair_page_layout == "page-full-width-content") ? 'col-lg-12' : 'col-lg-8 content-right'); ?>">
 			<div class="mg-card-box wd-back">
 				<?php if( have_posts()) :  the_post(); ?>
-				<?php 
-					the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
-					the_content(); ?>
-				<?php endif; 
+					<figure class="post-thumbnail">
+						<?php the_post_thumbnail( '', array( 'class'=>'img-responsive' ) ); ?>
+					</figure>
+				<?php the_content();
+				endif; 
 					while ( have_posts() ) : the_post();
 					// Include the page
 					the_content();
@@ -46,16 +41,16 @@
 				?>	
 			</div>
 		</div>
-			<!--Sidebar Area-->
-			<?php if($newsair_page_layout == "page-align-content-right") { ?>
-				<!--sidebar-->
-				<!--col-md-4-->
-				<aside class="col-md-4 sidebar-right">
-					<?php get_sidebar(); ?>
-				</aside>
-				<!--/col-md-4-->
-				<!--/sidebar-->
-			<?php } ?>
-	<?php } ?>
+		<!--Sidebar Area-->
+		<?php if($newsair_page_layout == "page-align-content-right") { ?>
+			<!--sidebar-->
+			<!--col-md-4-->
+			<aside class="col-md-4 sidebar-right">
+				<?php get_sidebar(); ?>
+			</aside>
+			<!--/col-md-4-->
+			<!--/sidebar-->
+		<?php }
+	} ?>
 	<!--Sidebar Area-->
 <?php
