@@ -26,19 +26,20 @@
 		<?php } ?>
 		<div class="<?php echo esc_attr(($newsair_page_layout == "page-full-width-content") ? 'col-lg-12' : 'col-lg-8 content-right'); ?>">
 			<div class="mg-card-box wd-back">
-				<?php if( have_posts()) :  the_post(); ?>
-					<figure class="post-thumbnail">
-						<?php the_post_thumbnail( '', array( 'class'=>'img-responsive' ) ); ?>
-					</figure>
-				<?php the_content();
-				endif; 
-					while ( have_posts() ) : the_post();
-					// Include the page
-					the_content();
-					comments_template( '', true ); // show comments 
-					endwhile; 
-					newsair_edit_link();
-				?>	
+				<?php if ( have_posts() ) :
+					while ( have_posts() ) : the_post(); ?>
+						<figure class="post-thumbnail">
+							<?php the_post_thumbnail( 'full', array( 'class'=>'img-responsive' ) ); ?>
+						</figure>
+						<?php the_content();
+						if ( comments_open() || get_comments_number() ) : ?>
+							<?php comments_template(); ?>
+						<?php endif; ?>
+
+						<?php newsair_edit_link(); ?>
+
+					<?php endwhile; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 		<!--Sidebar Area-->
