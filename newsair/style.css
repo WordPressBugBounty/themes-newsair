@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsair-free-magazine-blog-wordpre
 Author: Themeansar
 Author URI: http://themeansar.com
 Description: Newsair is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsair is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsair is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsair and documentation at https://docs.themeansar.com/docs/newsair/
-Version: 1.0.0.77
+Version: 1.0.0.78
 Tested up to: 6.7
 Requires PHP: 7.4
 Requires at least: 5.4
@@ -17,6 +17,7 @@ Text Domain: newsair
   --bxsh:0 1px 3px rgb(0 0 0 / 15%);
   --bxshover: 0 4px 60px 0 rgba(0,0,0,0.2);
   --bstras: 0 4px 60px 0 rgba(0,0,0,0.2);
+  --headFont: 'Inter Tight';
 }
 /*---------------------------------------
 	Body & Global    
@@ -382,7 +383,7 @@ h6, .h6 {
 	line-height: 1.3;
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	font-family: 'Inter Tight';
+	font-family: var(--headFont);
 	font-weight: 800; 
 	color: var(--head-color);
 	font-feature-settings: "lnum";
@@ -1348,7 +1349,7 @@ form.search-form label{
 	font-weight: 700;
 	font-size: 40px;
 	line-height: 1.2;
-	font-family: 'Inter Tight';
+	font-family: var(--headFont);
 }
 .site-branding-text p { 
 	margin-bottom: 0;
@@ -2909,7 +2910,7 @@ form.wp-block-search {
 }
 .wp-block-latest-posts__list .wp-block-latest-posts__featured-image + .wp-block-latest-posts__post-title{
 	font-weight: 700;
-	font-family: 'Inter Tight';
+	font-family: var(--headFont);
 }
 
 /* --------------------------------------
@@ -2970,6 +2971,7 @@ footer .bs-footer-bottom-area {
 }
 footer .bs-widget {
 	background: unset;
+	overflow: hidden;
 } 
 .footer-logo { 
 	border-radius: 0%;
@@ -3581,7 +3583,7 @@ form .wp-block-search__inside-wrapper{
     line-height: 1.2;
     display: inline-flex;
 	width: auto;
-	font-family: 'Inter Tight';
+	font-family: var(--headFont);
 }
 .widget_block h2 {
 	margin-bottom: 20px;
