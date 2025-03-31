@@ -102,7 +102,8 @@ homemain();
     }
   }
   
-  function scrollToTop() {
+  function scrollToTop(event) {
+    event.preventDefault(); 
     // Scroll to top logic
     rootElement.scrollTo({
       top: 0,
