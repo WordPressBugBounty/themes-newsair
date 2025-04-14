@@ -5,47 +5,46 @@
   =================================== */
 
   function homemain() {
-  var homemain = new Swiper('.homemain', {
-    direction: 'horizontal',
-    loop: true,
-    autoplay: true,
-    autoplay: {
-    delay: 3000,
-    },
-    speed:500,
-    slidesPerView: 1,
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-  // // Pagination Bullets
-  // pagination: {
-  // el: ".swiper-pagination",
-  // },
-
-  });              
-}
-homemain();
-
-  function homefeatured() {
-  var recentareaSlider = new Swiper('.recentarea-slider', {
-    direction: 'vertical',
-    loop: true,
-    slidesPerView: 4,
-    spaceBetween: 30,
-    autoplay: true,
-    // Navigation arrows
-    navigation: {
+    var homemain = new Swiper('.homemain', {
+      direction: 'horizontal',
+      loop: true,
+      autoplay: true,
+      autoplay: {
+        delay: 3000,
+      },
+      speed: 1000,
+      slidesPerView: 1,
+      // Navigation arrows
+      navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
-    },
-    breakpoints: {
-    // when window width is <= 320px
-        768: {
-          allowTouchMove: 0,
-        },
-      }
+      },
+      // // Pagination Bullets
+      // pagination: {
+      // el: ".swiper-pagination",
+      // },
+    });              
+  }
+  homemain();
+
+  function homefeatured() {
+    var recentareaSlider = new Swiper('.recentarea-slider', {
+      direction: 'vertical',
+      loop: true,
+      slidesPerView: 4,
+      spaceBetween: 30,
+      autoplay: true,
+      // Navigation arrows
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+      },
+      breakpoints: {
+      // when window width is <= 320px
+          768: {
+            allowTouchMove: 0,
+          },
+        }
     });
   }
   homefeatured();
@@ -59,7 +58,8 @@ homemain();
       loop: true,
       autoplay:{
         delay: 3000,
-    },
+      },
+      speed:700,
       slidesPerView: 1,
       // Navigation arrows
       navigation: {

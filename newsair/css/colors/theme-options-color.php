@@ -87,7 +87,7 @@ function theme_options_color() {
 	} 
 	@media (max-width:991px) {
 		.postcrousel .bs-blog-post .title{ 
-			font-size:<?php echo newsair_get_option('featured_story_title_fontsize_tablet').'px'; ?>; 
+			font-size: <?php echo newsair_get_option('featured_story_title_fontsize_tablet').'px'; ?>; 
 		}
 	}
 	@media (max-width:576px) {

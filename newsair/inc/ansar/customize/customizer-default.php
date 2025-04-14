@@ -52,9 +52,12 @@ function newsair_get_default_theme_options() {
     $defaults['select_slider_news_category'] = 0; 
 
     $defaults['slider_title_fontsize_desktop'] = 28;
-    $defaults['slider_title_fontsize_tablet'] = 24;
-    $defaults['slider_title_fontsize_mobile'] = 20;
+    $defaults['slider_title_fontsize_tablet'] = 28;
+    $defaults['slider_title_fontsize_mobile'] = 24;
     
+    $defaults['newsair_trend_title_fontsize_desktop'] = 24;
+    $defaults['newsair_trend_title_fontsize_tablet'] = 22;
+    $defaults['newsair_trend_title_fontsize_mobile'] = 22;
 
     $defaults['select_trending_news_category'] = 0;
     $defaults['trending_news_number'] = 1;
@@ -68,8 +71,8 @@ function newsair_get_default_theme_options() {
     $defaults['featured_story_category'] = 0;
     $defaults['featured_number_of_story'] = 5;
     $defaults['featured_story_title_fontsize_desktop'] = 24;
-    $defaults['featured_story_title_fontsize_tablet'] = 18;
-    $defaults['featured_story_title_fontsize_mobile'] = 14; 
+    $defaults['featured_story_title_fontsize_tablet'] = 22;
+    $defaults['featured_story_title_fontsize_mobile'] = 22; 
     $defaults['featured_story_meta_enable'] = 1;
     $defaults['select_tabbed_thumbs_section_mode'] = 'tabbed';
     $defaults['select_tab_section_mode'] = 'default';

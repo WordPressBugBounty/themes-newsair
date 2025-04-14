@@ -8,12 +8,6 @@
 
 $newsair_default = newsair_get_default_theme_options();
 
-/**
- * Frontpage options section
- *
- * @package Newsair
- */
-
 //Top tags Section.
 $wp_customize->add_section('newsair_popular_tags_section_settings',
     array(
@@ -365,44 +359,40 @@ $wp_customize->add_control(
 // Trending/Editor Title Font Size
 
 // For Desktop   
-$wp_customize->add_setting('newsair_trend_title_fontsize_desktop',array(
-
-'default' => 22,
-'capability' => 'edit_theme_options',
-'sanitize_callback' => 'absint',
-
-));
+$wp_customize->add_setting('newsair_trend_title_fontsize_desktop',
+    array(
+    'default' => $newsair_default['newsair_trend_title_fontsize_desktop'],
+    'capability' => 'edit_theme_options',
+    'sanitize_callback' => 'absint',
+    )
+);
 // For Tablet   
-$wp_customize->add_setting('newsair_trend_title_fontsize_tablet',array(
-
-    'default' => 17,
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
+$wp_customize->add_setting('newsair_trend_title_fontsize_tablet',
+    array(
+        'default' => $newsair_default['newsair_trend_title_fontsize_tablet'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'absint',
+    )
+);
 // For Mobile   
-$wp_customize->add_setting('newsair_trend_title_fontsize_mobile',array(
-
-    'default' => 14,
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
-$wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'newsair_tren_edit_title_font_size', array(
-
-    'label' => __('Title Font Size','newsair' ),
-    'section' => 'frontpage_main_banner_section_settings',
-    'settings' => [
-    'desktop_input' => 'newsair_trend_title_fontsize_desktop',
-    'tablet_input'  => 'newsair_trend_title_fontsize_tablet',
-    'mobile_input'  => 'newsair_trend_title_fontsize_mobile',
-    ],
-    'is_responsive' => true,
-    'priority' => 70,
-    'input_attrs' => array(
-    'min' => 10,
-    'max' => 120,
-    'step' => 1,
-    ),
-    
-) ) );
+$wp_customize->add_setting('newsair_trend_title_fontsize_mobile',
+    array(
+        'default' => $newsair_default['newsair_trend_title_fontsize_mobile'],
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'absint',
+    )
+);
+$wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'newsair_tren_edit_title_font_size', 
+    array(
+        'label' => __('Title Font Size','newsair' ),
+        'section' => 'frontpage_main_banner_section_settings',
+        'settings' => [
+            'desktop_input' => 'newsair_trend_title_fontsize_desktop',
+            'tablet_input'  => 'newsair_trend_title_fontsize_tablet',
+            'mobile_input'  => 'newsair_trend_title_fontsize_mobile',
+        ],
+        'is_responsive' => true,
+        'priority' => 70,
+        'input_attrs' => array( 'min' => 10, 'max' => 120, 'step' => 1,),        
+    ) 
+) );
