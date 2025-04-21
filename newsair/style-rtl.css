@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsair-free-magazine-blog-wordpre
 Author: Themeansar
 Author URI: http://themeansar.com
 Description: Newsair WordPress theme ideal for a business or blog website (corporate, Consulting, Advisor, Agency, Finance, law, Photography etc.). You can also use for anything. It comes with all features these kind of shop page, blog page.The theme you can use for any business website.
-Version: 1.0.0.80
+Version: 1.0.0.81
 Tested up to: 6.7
 Requires PHP: 7.4
 Requires at least: 5.4
@@ -1956,7 +1956,7 @@ nav .navbar-nav:not(.sm-collapsible) .dropdown-item.has-submenu{
     min-height: 260px; 
 }
 .list-blog.bs-blog-post .small {
-    padding: 0 20px;
+    padding: 0 20px 0 0;
 	font-size: 17px;
 }
 .list-blog.bs-blog-post .title, .list-blog.bs-blog-post .bs-blog-meta, .list-blog.bs-blog-post .bs-blog-category {
@@ -2263,7 +2263,7 @@ footer .small-post-list-widget .small-post:nth-child(3){
 	/* box-shadow: 3px 3px 6px rgba(117, 117, 117, 0.3); */
 }
 .bs-blog-post .title {
-	font-size: 20px;
+	font-size: 22px;
 	margin-bottom: 20px;
 	text-decoration: none;
 	display: -webkit-box;
@@ -3635,7 +3635,7 @@ form .wp-block-search__inside-wrapper{
 	padding: 8px 20px;
 	display: inline-flex;
 }
-.widget_block h2:before {
+.widget_block .wp-block-heading:before {
     position: absolute;
     content: "";
     height: 2px;
@@ -3871,6 +3871,7 @@ footer .bs-widget-title .title:before{
 	}
 	.list-blog.bs-blog-post .small {
 		width: 100%;
+		padding: 0;
 	}
 }
 @media screen and (min-width: 240px) and (max-width: 1179px) {
