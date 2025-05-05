@@ -4,8 +4,8 @@ Author: Themeansar
 Requires at least: WordPress 6.6
 Tested up to: WordPress 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.0.83
-Version: 1.0.0.83
+Stable tag: 1.0.0.84
+Version: 1.0.0.84
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -374,6 +374,8 @@ Source: https://stocksnap.io/photo/train-station-6FHSE43K4R
 = Version 1.0.0.82
 * Fixed Responsive Issue.
 
-
 = Version 1.0.0.83
 * Fixed Responsive Issue.
+
+= Version 1.0.0.84
+* Fixed Search Page Result Issue.
