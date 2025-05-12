@@ -9,10 +9,10 @@ get_header(); ?>
 <div id="content">
     <!--container-->
     <div class="container">
-    <!--row-->
+        <!--==================== breadcrumb section ====================-->
+        <?php do_action('newsair_action_archive_page_title'); ?>
+        <!--row-->
         <div class="row">
-            <!--==================== breadcrumb section ====================-->
-            <?php do_action('newsair_breadcrumb_content'); ?>
             <?php get_template_part('template-parts/content', 'search'); ?>
             <aside class="col-md-4">
                 <?php get_sidebar();?>

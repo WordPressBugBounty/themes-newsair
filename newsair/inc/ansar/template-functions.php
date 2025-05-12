@@ -182,6 +182,9 @@ if (!function_exists('get_archive_title')) :
             $title = post_type_archive_title('', false);
         } elseif (is_single()) {
             $title = '';
+        } elseif(is_search()){   
+            /* translators: %s: search term */
+            $title = sprintf( esc_html__( 'Search Results for: %s', 'newsair' ), esc_html( get_search_query() ) );
         } else {
             $title = get_the_title();
         }
@@ -196,9 +199,15 @@ if (!function_exists('newsair_archive_page_title')) :
         
     function newsair_archive_page_title($title) { ?>
         <div class="bs-card-box page-entry-title">
-            <?php if(!empty(get_the_archive_title())){ ?>
-            <h1 class="entry-title title mb-0"><?php echo get_the_archive_title();?></h1>
-            <?php } do_action('newsair_breadcrumb_content'); ?>
+          <?php if(!empty(get_the_archive_title())){ ?>
+                <div class="page-entry-title-box">
+                <h1 class="entry-title title mb-0"><?php echo get_the_archive_title();?></h1>
+                <?php if(is_search()) {
+                    newsair_search_count();
+                }
+                echo '</div>';
+            }
+            do_action('newsair_breadcrumb_content'); ?>
         </div>
         <?php
     }
@@ -624,4 +633,28 @@ function newsair_search_popup() { ?>
         </div>
     </div>
 <?php }
+endif;
+
+
+if ( ! function_exists( 'newsair_search_count' ) ) :
+    function newsair_search_count() { 
+        global $wp_query;
+        $total_results = $wp_query->found_posts;
+        ?>
+        <!-- Results Count -->
+        <p class="search-results-count">
+            <?php
+            if ( $total_results > 0 ) {
+                // Translators: %s is the number of found results.
+                echo sprintf(
+                    _n( '%s result found', '%s results found', $total_results, 'newsair' ),
+                    number_format_i18n( $total_results )
+                );
+            } else {
+                echo esc_html__( 'No results found', 'newsair' );
+            }
+            ?>
+        </p>
+        <?php
+    }
 endif;
