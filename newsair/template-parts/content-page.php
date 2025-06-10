@@ -29,7 +29,7 @@
 				<?php if ( have_posts() ) :
 					while ( have_posts() ) : the_post(); ?>
 						<figure class="post-thumbnail">
-							<?php the_post_thumbnail( 'full', array( 'class'=>'img-responsive' ) ); ?>
+							<?php the_post_thumbnail( 'full', array( 'class'=>'img-responsive img-fluid attachment-full size-full' ) ); ?>
 						</figure>
 						<?php the_content();
 						if ( comments_open() || get_comments_number() ) : ?>

@@ -493,14 +493,14 @@ function newsair_post_image_display_type($post){
             if($layout == 'grid-right-sidebar' || $layout == 'grid-left-sidebar' || $layout == 'grid-fullwidth'){ ?>
                 <div class="bs-post-thumb img">
                     <?php echo '<a href="'.esc_url(get_the_permalink()).'">';
-                        the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
+                        the_post_thumbnail( '', array( 'class'=>'img-responsive img-fluid attachment-full size-full' ) );
                         echo '</a>'; ?> 
                 </div>
             <?php } else { ?>
                 <div class="col-12 col-md-6">
                     <div class="bs-post-thumb img">
                     <?php echo '<a href="'.esc_url(get_the_permalink()).'">';
-                        the_post_thumbnail( '', array( 'class'=>'img-responsive' ) );
+                        the_post_thumbnail( '', array( 'class'=>'img-responsive img-fluid attachment-full size-full' ) );
                         echo '</a>'; ?> 
                     </div>
                 </div> 
