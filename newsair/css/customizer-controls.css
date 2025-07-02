@@ -16,10 +16,7 @@
 }
 #customize-control-newsair_theme_color input, #customize-control-newsair_default_bg_image input{display:none;}
 #customize-control-newsair_default_bg_image img {height:40px; width:40px; }
-.newsair-notice {
-  position: relative;
-  padding: 8px 40px 8px 8px;
-}
+
 .newsair-notice-content {
   display: flex;
 }
@@ -91,7 +88,6 @@ li.customize-control-color .wp-picker-container .wp-color-result.button {
 .dashicons-external:before {
   color: #2271b1;
 }
-.newsair-documentation, .newsair-demos{ display:inline; margin-right: 10px; margin-left: 5px; }
 #customize-controls .ui-checkboxradio-checked img {
   border: 4px solid #0025ff;
 }
@@ -102,13 +98,6 @@ li.customize-control-color .wp-picker-container .wp-color-result.button {
   font-size: 18px;
   padding-right: 5px;
   vertical-align: middle;
-}
-a.button.button-primary.button-hero.newsair-button-padding {
-  margin-right: 10px;
-}
-.newsair-notice_text .panel-column-6{
-  display: flex;
-  align-items: center;
 }
 .custom-radio-control .radio-button-label input + span {
   border: 1px solid #555;
@@ -279,4 +268,45 @@ li#accordion-section-newsair_pro_upsell h3 {
   box-shadow: none;
   border: 0;
 	background: transparent;
+}
+
+
+.newsair-notice {
+  position: relative;
+  padding: 8px;
+}
+.newsair-notice-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsair-notice_text .panel-column-6{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.panel-column-6 .newsair-notice-buttons{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.panel-column-6 .newsair-notice-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.newsair-notice-link{ 
+  display:inline;
+  color: #222;
+}
+.admin-bar .newsair-btn-get-started, .admin-bar .newsair-btn-get-started-customize{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
