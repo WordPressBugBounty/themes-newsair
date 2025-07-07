@@ -20,12 +20,26 @@ function newsair_fonts_url() {
     $fonts_url = '';
 		
     $font_families = array();
- 
-	$font_families = array('DM Sans:400,500,700|Inter Tight:100,200,300,400,500,600,700,800,900&display=swap|Kalam|Open Sans|Rokkitt|Jost|Poppins|Lato|Noto Serif|Raleway|Roboto');
- 
+        
+        $font_families = array(
+            'DM Sans:300,400,500,700',
+            'Open Sans:300,400,600,700',
+            'Kalam:300,400,700',
+            'Rokkitt:300,400,700',
+            'Jost:300,400,500,700',
+            'Poppins:300,400,500,600,700',
+            'Lato:300,400,700',
+            'Noto Serif:300,400,700',
+            'Raleway:300,400,500,700',
+            'Roboto:300,400,500,700',
+            'Inter Tight:100,200,300,400,500,600,700,800,900',
+        );
+
+        // Build the URL
         $query_args = array(
             'family' => urlencode( implode( '|', $font_families ) ),
-            'subset' => urlencode( 'latin,latin-ext' ),
+            'display' => 'swap',
+            'subset' => 'latin,latin-ext',
         );
  
     return apply_filters( 'newsair_fonts_url', add_query_arg( $query_args, 'https://fonts.googleapis.com/css' ) );
