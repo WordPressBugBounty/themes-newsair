@@ -162,7 +162,7 @@ li.customize-control-color .wp-picker-container .wp-color-result.button {
   border-color: #0075ff;
 }
 /*=========================================
-    Customizer Layout Design
+  Customizer Layout Design
 =========================================
 -----------------------------------------*/
 li[id*= "accordion-section-"]{
@@ -281,28 +281,28 @@ li#accordion-section-newsair_pro_upsell h3 {
 }
 
 .newsair-notice_text .panel-column-6{
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 .panel-column-6 .newsair-notice-buttons{
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
 }
 .panel-column-6 .newsair-notice-links {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .newsair-notice-link{ 
   display:inline;
-  color: #222;
+  color: #2271b1;
 }
 .admin-bar .newsair-btn-get-started, .admin-bar .newsair-btn-get-started-customize{
   display: flex;

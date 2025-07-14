@@ -35,21 +35,21 @@ function newsair_deprecated_hook_admin_notice() {
                                 printf( esc_html__('Welcome to %1$s', 'newsair'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
                         </h1>
                         
-                        <p><?php esc_html_e("Thank you for choosing newsair theme. To take full advantage of the complete features of the theme click the Starter Sites and Install and Activate the", "newsair");?> <a href="https://wordpress.org/plugins/ansar-import"><?php esc_html_e("Ansar Import", "newsair");?></a> <?php esc_html_e("plugin then use the demo importer and install the Newsair Demo according to your need.", "newsair"); ?></p>
+                        <p><?php esc_html_e("Thank you for choosing Newsair theme. To take full advantage of the complete features of the theme click the Starter Sites and Install and Activate the", "newsair");?> <a href="https://wordpress.org/plugins/ansar-import"><?php esc_html_e("Ansar Import", "newsair");?></a> <?php esc_html_e("plugin then use the demo importer and install the Newsair Demo according to your need.", "newsair"); ?></p>
 
                         <div class="panel-column-6">
                             <div class="newsair-notice-buttons">
-                                <a class="newsair-btn-get-started button button-primary button-hero newsair-button-padding" href="#" data-name="" data-slug=""><span aria-hidden="true" class="dashicons dashicons-images-alt"></span><?php esc_html_e( 'Starter Sites', 'newsair' ) ?></a>
-                                <a class="newsair-btn-get-started-customize button button-primary button-hero newsair-button-padding" href="<?php echo esc_url( admin_url( '/customize.php' ) ); ?>" data-name="" data-slug=""><span aria-hidden="true" class="dashicons dashicons-welcome-widgets-menus"></span><?php esc_html_e( 'Customize Site', 'newsair' ) ?></a>
+                                <a class="newsair-btn-get-started button button-primary button-hero newsair-button-padding" href="#" data-name="" data-slug=""><span aria-hidden="true" class="dashicons dashicons-images-alt"></span><?php esc_html_e( 'Get Started', 'newsair' ) ?></a>
+                                <a class="newsair-btn-get-started-customize button button-secondary button-hero newsair-button-padding" href="<?php echo esc_url( admin_url( '/customize.php' ) ); ?>" data-name="" data-slug=""><span aria-hidden="true" class="dashicons dashicons-welcome-widgets-menus"></span><?php esc_html_e( 'Customize Site', 'newsair' ) ?></a>
                             </div>
                             <div class="newsair-notice-links">
-                                <div class="newsair-documentation newsair-notice-link">
-                                    <span aria-hidden="true" class="dashicons dashicons-list-view"></span>
-                                    <a class="newsair-documentation" href="<?php echo esc_url('https://docs.themeansar.com/docs/newsair-lite/')?>" data-name="" data-slug=""><?php esc_html_e( 'View Documentation', 'newsair' ) ?></a>
-                                </div>
                                 <div class="newsair-demos newsair-notice-link">
                                     <span aria-hidden="true" class="dashicons dashicons-images-alt"></span>
                                     <a class="newsair-demos" href="<?php echo esc_url('https://demos.themeansar.com/newsair-demos')?>" data-name="" data-slug=""><?php esc_html_e( 'View Demos', 'newsair' ) ?></a>
+                                </div>
+                                <div class="newsair-documentation newsair-notice-link">
+                                    <span aria-hidden="true" class="dashicons dashicons-list-view"></span>
+                                    <a class="newsair-documentation" href="<?php echo esc_url('https://docs.themeansar.com/docs/newsair-lite/')?>" data-name="" data-slug=""><?php esc_html_e( 'View Documentation', 'newsair' ) ?></a>
                                 </div>
                                 <div class="newsair-support newsair-notice-link">
                                     <span aria-hidden="true" class="dashicons dashicons-format-chat"></span>
