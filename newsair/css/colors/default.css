@@ -677,6 +677,9 @@ blockquote p {
 	border-color: var(--bor-color);
 	color: var(--text-color);
 }
+ol.wp-block-latest-comments li{
+	border-color: var(--bor-color);
+}
 .bs-sidebar .bs-widget ul li a {
 	color: var(--text-color);
 }
