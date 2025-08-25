@@ -127,10 +127,21 @@
 	// Featured Slider Position
 	wp.customize( 'main_slider_position', function( value ) {
 		value.bind( function( newVal ) {
-			if(newVal !== ''){
-				$('.mainfeatured .row.gx-1').addClass('flex-row-reverse');
-			}else{
-				$('.mainfeatured .row.gx-1').removeClass('flex-row-reverse');
+			var $row = $('.mainfeatured .row.gx-1');
+			
+			if (newVal === 'right') {
+				// Add class if value is 'right'
+				if (!$row.hasClass('flex-row-reverse')) {
+					$row.addClass('flex-row-reverse');
+				}
+			} else if (newVal === 'left') {
+				// Remove class if value is 'left'
+				if ($row.hasClass('flex-row-reverse')) {
+					$row.removeClass('flex-row-reverse');
+				}
+			} else {
+				// If the value is neither 'right' nor 'left', ensure the class is removed
+				$row.removeClass('flex-row-reverse');
 			}
 		});
 	});
