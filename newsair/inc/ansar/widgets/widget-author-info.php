@@ -252,7 +252,7 @@ class newsair_author_info extends WP_Widget {
                     id="<?php echo esc_attr($this->get_field_id('open_btnone_new_window')); ?>"
                     name="<?php echo esc_attr($this->get_field_name('open_btnone_new_window')); ?>"
                     value="1" <?php checked( $instance['open_btnone_new_window'], 1 ); ?> />
-                <?php esc_html_e( 'Open link in new tab','blogus' ); ?>
+                <?php esc_html_e( 'Open link in new tab','newsair' ); ?>
             </label>
         </p>
     <?php

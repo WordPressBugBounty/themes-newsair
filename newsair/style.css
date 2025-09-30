@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsair-free-magazine-blog-wordpre
 Author: Themeansar
 Author URI: http://themeansar.com
 Description: Newsair is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. Newsair is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. Newsair is SEO friendly, WPML,Gutenberg, translation and RTL ready. Live preview : https://demo.themeansar.com/newsair and documentation at https://docs.themeansar.com/docs/newsair/
-Version: 2.0.0
+Version: 2.0.1
 Tested up to: 6.8
 Requires PHP: 7.4
 Requires at least: 6.7
@@ -3073,7 +3073,7 @@ footer .bs-footer-copyright .text-xs {
     margin: auto 0;
 }
 footer .bs-footer-copyright li a {
-    padding: 0.5rem 0 0.5rem 1rem;
+    padding: 0.5rem 0;
 }
 footer .wd-back {
 	background: unset;
@@ -3103,6 +3103,12 @@ footer .bs-widget .sub-menu{
 }
 footer .bs-widget .sub-menu li:first-child {
     margin-top: 10px;
+}
+footer .bs-footer-copyright .info-right{
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 1.25rem;
+	row-gap: 0.75rem;
 }
 /* --------------------------------------
 =========================================
@@ -3904,9 +3910,6 @@ footer .bs-widget-title .title:before{
 	}
 	.missedslider{
 		grid-template-columns: repeat(1, minmax(0, 1fr)) 
-	}
-	footer .bs-footer-copyright li a {
-		padding: 0.5rem;
 	}
 	.list-blog.bs-blog-post .small {
 		width: 100%;
