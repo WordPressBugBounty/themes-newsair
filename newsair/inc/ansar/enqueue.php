@@ -99,9 +99,21 @@ add_action( 'wp_print_footer_scripts', 'newsair_skip_link_focus_fix' );
 
 if ( ! function_exists( 'newsair_admin_scripts' ) ) :
 	function newsair_admin_scripts() {
-		wp_enqueue_script( 'newsair-admin-script', get_template_directory_uri() . '/inc/ansar/customizer-admin/js/newsair-admin-script.js', array( 'jquery' ), '', true );
-		wp_localize_script( 'newsair-admin-script', 'newsair_ajax_object',
-			array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
+		wp_enqueue_script(
+        	'newsair-admin-script',
+			get_template_directory_uri() . '/inc/ansar/customizer-admin/js/newsair-admin-script.js',
+			array( 'jquery' ),
+			'',
+			true
+		);
+		wp_localize_script(
+			'newsair-admin-script',
+			'newsair_ajax_object',
+			array(
+				'ajax_url'      => admin_url( 'admin-ajax.php' ),
+				'install_nonce' => wp_create_nonce( 'newsair_install_plugin_nonce' ),
+				'can_install'   => current_user_can( 'install_plugins' ),
+			)
 		);
 		wp_enqueue_style('newsair-admin-style-css', get_template_directory_uri() . '/css/customizer-controls.css');
 	}

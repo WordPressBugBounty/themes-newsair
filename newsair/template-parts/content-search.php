@@ -14,7 +14,9 @@
                     <?php newsair_post_categories(); ?>
                     <h4 class="entry-title title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
                         <!-- Show meta for posts and other types, hide for pages in search results -->
-                        <?php if ( is_search() && get_post_type() === 'page' ) {}
+                        <?php 
+                        $post_type = get_post_type(); 
+                        if ( is_search() && ($post_type === 'page' || $post_type === 'product') ) {}
                         else {
                             newsair_post_meta();
                         } ?> 

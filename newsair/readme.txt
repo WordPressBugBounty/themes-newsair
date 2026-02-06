@@ -2,10 +2,10 @@
 Contributors: Themeansar
 Author: Themeansar
 Requires at least: WordPress 6.7
-Tested up to: WordPress 6.8
+Tested up to: WordPress 6.9
 Requires PHP: 7.4
-Stable tag: 2.0.1
-Version: 2.0.1
+Stable tag: 2.1.5
+Version: 2.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -64,7 +64,7 @@ License: MIT
  * Licensed under https://github.com/vadikom/smartmenus
  * https://github.com/vadikom/smartmenus/blob/master/src/addons/keyboard/jquery.smartmenus.keyboard.js
 
-* Screenshot Banner Image - https://pxhere.com/en/photo/1446003
+* Screenshot Header Image - https://pxhere.com/en/photo/804895
 License: CC0 Public Domain
 
 == Post Image ==
@@ -430,3 +430,45 @@ Source: https://stocksnap.io/photo/train-station-6FHSE43K4R
 
 = Version 2.0.1
 * Fixed Footer menus Styling Issues.
+
+= Version 2.0.2
+* Fixed Inputs RTL Styling Issues.
+
+= Version 2.0.3
+* Fixed Category Count Styling.
+
+= Version 2.0.4
+* Fixed Security Issues.
+
+= Version 2.0.5
+* Added Theme Support Function.
+
+= Version 2.0.6
+* Added Woocommerce Category on Products.
+
+= Version 2.0.7
+* Fixed Product Meta Issue on Search Page
+
+= Version 2.0.8
+* Fixed WooCommerce Product Page Styling Issues.
+
+= Version 2.0.9
+* Added Navigation On Product Featured Image.
+
+= Version 2.1.0
+* Fixed WooCommerce Product Price Color Issues.
+
+= Version 2.1.1
+* Fixed Shop Page Pagination Styling.
+
+= Version 2.1.2
+* Added Theme Color CSS Variable.
+
+= Version 2.1.3
+* Added Body Font Variable.
+
+= Version 2.1.4
+* Added Header Image URL.
+
+= Version 2.1.5
+* Fixed WooCommerce Product Image Gallery.
