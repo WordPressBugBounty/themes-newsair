@@ -9,6 +9,7 @@
 	--box-color: #fff;
 	/* --wrap-color: #eff2f7; */
 	--bor-color: #e2e8f0;
+	--grady-color: #005aff;
 }
 
 ::selection {
@@ -30,12 +31,12 @@
 }
 
 .navbar-toggler:hover,
-.navbar-toggler::focus {
-	background-color: var(--pri-color);
+.navbar-toggler:focus {
+	background: var(--grady-color);
 }
 
 .bs-default .bs-menu-full {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 p {
@@ -48,18 +49,18 @@ p {
 }
 
 .mg-latest-news .bn_title .title {
-	background-color: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
 .bs-head-detail .top-date {
-	/* background: var(--pri-color); */
+	/* background: var(--grady-color); */
 	color: var(--pri-color);
 	color: #e8e8e8;
 }
 
 .bs-head-detail .top-date .time {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -126,7 +127,7 @@ p {
 }
 
 .navbar-wp .dropdown-menu.searchinner [type=submit] {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -208,7 +209,7 @@ p {
 }
 
 .bs-headtwo .right-nav .subscribe-btn {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -255,7 +256,7 @@ p {
 }
 
 .bs-headthree .right-nav a.subscribe-btn {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .bs-headthree .navbar-toggler.x .icon-bar {
@@ -276,7 +277,7 @@ p {
 }
 
 .bs-headfour .right-nav .subscribe-btn {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -361,7 +362,7 @@ button.btn:hover {
 }
 
 .modal-header .btn-close {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 	border-color: var(--pri-color);
 }
@@ -372,7 +373,7 @@ button.btn:hover {
 
 input[type="submit"],
 button {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	border-color: var(--pri-color);
 	color: #fff;
 }
@@ -419,13 +420,13 @@ a:focus {
 .bs .swiper-button-next:hover,
 .woocommerce-product-gallery .flex-direction-nav .flex-prev:hover,
 .woocommerce-product-gallery .flex-direction-nav .flex-next:hover {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
 .swiper-navigation .swiper-button-prev:hover,
 .swiper-navigation .swiper-button-next:hover {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -438,7 +439,7 @@ a:focus {
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .facebook,
@@ -518,7 +519,7 @@ a:focus {
 
 .envelope,
 .envelope+.icon-soci-content .bs-count {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .entry-content .post-share a {
@@ -557,7 +558,7 @@ a:focus {
 .bs-widget .bs-widget-tags a:hover,
 .bs-widget .bs-widget-tags a:focus {
 	color: #fff;
-	background: var(--pri-color);
+	background: var(--grady-color);
 	border-color: var(--pri-color);
 }
 
@@ -570,7 +571,7 @@ a:focus {
 .tabarea-area .nav-tabs .nav-link:hover,
 .tabarea-area .nav-tabs .nav-link:focus,
 .tabarea-area .nav-tabs .nav-link.active {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 	border-color: var(--pri-color);
 }
@@ -604,7 +605,7 @@ a:focus {
 
 .bs-widget.promo:hover h5 a,
 .bs-widget.promo h5 a:focus {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -617,7 +618,7 @@ a:focus {
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
 	color: #fff;
-	background-color: var(--pri-color);
+	background: var(--grady-color);
 	border-color: var(--pri-color);
 }
 
@@ -639,7 +640,7 @@ a:focus {
 
 /* --- Top Tags  -- */
 .mg-tpt-txnlst .mg-tpt-txnlst-title {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -661,12 +662,12 @@ a:focus {
 }
 
 .bs-widget-title .title {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
 .bs-widget-title .title:before {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .bs-widget-title.three .title:after {
@@ -674,7 +675,7 @@ a:focus {
 }
 
 .bs-widget-title.two .title {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -801,18 +802,18 @@ a:focus {
 }
 
 .bs-blog-category:before {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .bs-blog-category a {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
 .bs-blog-category a:hover,
 .bs-blog-category a:focus {
 	color: #fff;
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .bs-blog-post .title,
@@ -871,7 +872,7 @@ a:focus {
 
 .comments-area .reply a {
 	color: #fff;
-	background: var(--pri-color);
+	background: var(--grady-color);
 	border-color: var(--pri-color);
 }
 
@@ -917,12 +918,12 @@ blockquote p {
 .wp-block-tag-cloud a:hover,
 .wp-block-tag-cloud a:focus {
 	color: #fff;
-	background: var(--pri-color);
+	background: var(--grady-color);
 	border-color: var(--pri-color);
 }
 
 .wp-block-search__button {
-	background: var(--pri-color) !important;
+	background: var(--grady-color) !important;
 	border-color: var(--pri-color) !important;
 	color: #fff !important;
 }
@@ -988,12 +989,12 @@ footer .bs-widget .tagcloud a {
 .bs-sidebar .bs-widget .bs-widget-tags a:focus,
 .bs-sidebar .bs-widget .tagcloud a:focus {
 	color: #fff;
-	background: var(--pri-color);
+	background: var(--grady-color);
 	border-color: var(--pri-color);
 }
 
 .bs-sidebar .bs-widget.widget_search .btn {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 	border-color: #e5e7eb;
 }
@@ -1013,7 +1014,7 @@ footer .bs-widget .tagcloud a {
 }
 
 .bs-widget .calendar_wrap table caption {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	border-color: var(--pri-color);
 	color: #fff;
 }
@@ -1025,13 +1026,13 @@ footer .bs-widget .tagcloud a {
 
 .widget_block h2,
 footer .wp-block-heading {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
 .widget_block h2:before,
 footer .wp-block-heading::before {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .wp-block-latest-comments__comment-meta {
@@ -1045,7 +1046,7 @@ footer .wp-block-heading::before {
 .single-nav-links .post-page-numbers:hover,
 .bs-blog-post .single .single-nav-links .post-page-numbers:hover {
 	color: #fff;
-	background-color: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .bs-sidebar .wp-block-verse {
@@ -1095,7 +1096,7 @@ h6,
 
 .btn-blog:hover,
 .btn-blog:focus {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 	border-color: var(--pri-color);
 }
@@ -1104,7 +1105,7 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-	background-color: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 	border-color: var(--pri-color);
 }
@@ -1144,13 +1145,13 @@ button:focus,
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
 	border-color: var(--pri-color);
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
 .page-item.active .page-link {
 	border-color: var(--pri-color);
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -1163,7 +1164,7 @@ button:focus,
 .navigation.pagination .nav-links a:hover,
 a.error-btn,
 .post-page-numbers.current {
-	background-color: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -1185,7 +1186,7 @@ a.error-btn,
 .navigation.pagination>.active>a:focus,
 .navigation.pagination>.active>span:focus {
 	border-color: var(--pri-color);
-	background: var(--pri-color);
+	background: var(--grady-color);
 	color: #fff;
 }
 
@@ -1322,7 +1323,7 @@ footer .bs-widget p {
 
 footer .bs-widget.widget_search .btn {
 	color: #fff;
-	background: var(--pri-color);
+	background: var(--grady-color);
 	border-color: var(--pri-color);
 }
 
@@ -1382,7 +1383,7 @@ footer .double-category-posts .colinn {
     color: #000;
 } */
 .bs_upscr {
-	background: var(--pri-color);
+	background: var(--grady-color);
 	border-color: var(--pri-color);
 	color: #fff !important;
 }
@@ -1411,7 +1412,7 @@ footer .bs-widget-title .title {
 }
 
 .form-group label::after {
-	background-color: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
@@ -1524,14 +1525,14 @@ td,
 .woocommerce input.button.alt:disabled:hover,
 .woocommerce input.button.alt[disabled]:disabled,
 .woocommerce input.button.alt[disabled]:disabled:hover {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .woocommerce #respond input#submit.alt,
 .woocommerce a.button.alt,
 .woocommerce button.button.alt,
 .woocommerce input.button.alt {
-	background-color: var(--pri-color) !important;
+	background: var(--grady-color) !important;
 }
 
 .woocommerce nav.woocommerce-pagination ul li a,
@@ -1636,7 +1637,7 @@ td,
 
 .woocommerce .products span.onsale,
 .woocommerce span.onsale {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .woocommerce-page .products a .price,
@@ -1666,7 +1667,7 @@ td,
 }
 
 .woocommerce-page .woocommerce-message a {
-	background-color: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .woocommerce-page .woocommerce-message a:hover,
@@ -1696,11 +1697,11 @@ td,
 
 /*woocommerce-Price-Slider*/
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .woocommerce-page .woocommerce-ordering select {
@@ -1754,11 +1755,11 @@ td,
 }
 .widget_block .wp-block-search__label {
 	color: #fff;
-	background-color: var(--pri-color);
+	background: var(--grady-color);
 }
 
 .wp-block-search__label:before {
-	background: var(--pri-color);
+	background: var(--grady-color);
 }
 
 ::-webkit-input-placeholder {
@@ -1786,7 +1787,7 @@ pre {
 
 @media (max-width: 991.98px) {
 	.navbar-wp .navbar-nav {
-		background: var(--pri-color);
+		background: var(--grady-color);
 	}
 
 	.bs-headtwo .navbar-wp .navbar-nav>li>a,
