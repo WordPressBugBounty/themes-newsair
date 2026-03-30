@@ -4,7 +4,7 @@ Theme URI: https://themeansar.com/free-themes/newsair-free-magazine-blog-wordpre
 Author: Themeansar
 Author URI: http://themeansar.com
 Description: Newsair WordPress theme ideal for a business or blog website (corporate, Consulting, Advisor, Agency, Finance, law, Photography etc.). You can also use for anything. It comes with all features these kind of shop page, blog page.The theme you can use for any business website.
-Version: 2.1.9
+Version: 2.2.0
 Tested up to: 6.9
 Requires PHP: 7.4
 Requires at least: 6.7
@@ -550,7 +550,6 @@ blockquote p {
 .navigation.pagination .nav-links .page-numbers,
 .navigation.pagination .nav-links a {
 	cursor: pointer;
-	display: inline-block;
 	font-size: 18px;
 	line-height: 40px;
 	margin: 0 6px 10px 0;
@@ -621,13 +620,11 @@ button.mfp-close:focus {
 .post-navigation .nav-previous {
 	width: 50%;
 	text-align: start;
-	display: inline-block;
 	float: left;
 }
 .post-navigation .nav-next {
 	width: 50%;
 	text-align: end;
-	display: inline-block;
 	float: right;
 }
 /*---------------------------------------
@@ -2345,6 +2342,7 @@ footer .small-post-list-widget .small-post:nth-child(3) {
 }
 .small-post .title {
 	display: -webkit-box;
+	line-clamp: 2;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
@@ -2416,6 +2414,7 @@ footer .small-post-list-widget .small-post:nth-child(3) {
 	margin-bottom: 20px;
 	text-decoration: none;
 	display: -webkit-box;
+	line-clamp: 3;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
@@ -2707,7 +2706,6 @@ footer .small-post-list-widget .small-post:nth-child(3) {
 	margin-right: 18px;
 	text-align: center;
 	width: 30px;
-	display: inline-block;
 	border-radius: 10px;
 }
 .bs-widget-address li span.icon-addr i {
