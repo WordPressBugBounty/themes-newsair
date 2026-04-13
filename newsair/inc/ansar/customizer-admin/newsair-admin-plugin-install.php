@@ -52,7 +52,11 @@ function newsair_deprecated_hook_admin_notice() {
 
                     <div class="panel-column-6">
                         <div class="newsair-notice-buttons">
-                            <a class="newsair-btn-get-started button button-primary button-hero newsair-button-padding" href="#" data-name="" data-slug=""><span aria-hidden="true" class="dashicons dashicons-images-alt"></span><?php esc_html_e( 'Get Started', 'newsair' ) ?></a>
+                            <?php if ( is_plugin_active( 'ansar-import/ansar-import.php' ) ) : ?>
+                            <a class="newsair-btn-get-started button button-primary button-hero newsair-button-padding" href="<?php echo esc_url(admin_url( 'admin.php?page=ansar-demo-import' )); ?>" data-name="" data-slug=""><span aria-hidden="true" class="dashicons dashicons-images-alt"></span><?php esc_html_e( 'Get Started', 'newsair' ) ?></a>
+                            <?php else : ?>
+                            <a class="newsair-btn-get-started load button button-primary button-hero newsair-button-padding" href="#" data-name="" data-slug=""><span aria-hidden="true" class="dashicons dashicons-images-alt"></span><?php esc_html_e( 'Get Started', 'newsair' ) ?></a>
+                            <?php endif; ?>
                             <a class="newsair-btn-get-started-customize button button-secondary button-hero newsair-button-padding" href="<?php echo esc_url( admin_url( '/customize.php' ) ); ?>" data-name="" data-slug=""><span aria-hidden="true" class="dashicons dashicons-welcome-widgets-menus"></span><?php esc_html_e( 'Customize Site', 'newsair' ) ?></a>
                         </div>
                         <div class="newsair-notice-links">

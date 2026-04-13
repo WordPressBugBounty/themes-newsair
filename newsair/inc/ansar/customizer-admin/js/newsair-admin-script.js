@@ -1,6 +1,6 @@
 (function ($) {
   $(document).ready(function () {
-    $('.newsair-btn-get-started').on('click', function (e) {
+    $('.newsair-btn-get-started.load').on('click', function (e) {
       e.preventDefault();
       if (!newsair_ajax_object.can_install) {
         alert('Sorry, you are not allowed to access this page.');
