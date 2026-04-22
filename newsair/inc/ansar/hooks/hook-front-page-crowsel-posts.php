@@ -44,15 +44,15 @@ if (!function_exists('newsair_posts_crowsel')):
                         <div class="bs-blog-post three md back-img bshre mb-0" <?php if (!empty($newsair_url)): ?>
                         style="background-image: url('<?php echo esc_url($newsair_url); ?>');"
                         <?php endif; ?>>
-                        <a class="link-div" href="<?php the_permalink(); ?>"> </a>
-                          <div class="inner">
+                        <div class="inner">
                           <?php if ($meta_enable == true ) {
-                           newsair_post_categories(); 
-                          } ?>
+                            newsair_post_categories(); 
+                            } ?>
                             <h4 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                             <?php if ($meta_enable == true ) {
                               newsair_post_meta(); 
-                            } ?>
+                              } ?>
+                              <a class="link-div" href="<?php the_permalink(); ?>"> </a>
                           </div>
                       </div>
                   </div>

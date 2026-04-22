@@ -36,23 +36,23 @@ if($newsair_enable_related_post == true){ ?>
                             <!-- blog -->
                             <div class="col-md-4">
                                 <div class="bs-blog-post three md back-img bshre mb-md-0" <?php if(has_post_thumbnail()) { ?> style="background-image: url('<?php echo esc_url($url); ?>');" <?php } ?>>
-                                    <a class="link-div" href="<?php the_permalink(); ?>"></a>
-                                    <div class="inner">
-                                        <?php if($newsair_enable_single_post_category == true) { 
-                                            newsair_post_categories();
+                                <div class="inner">
+                                    <?php if($newsair_enable_single_post_category == true) { 
+                                        newsair_post_categories();
                                         } 
                                         $newsair_enable_single_post_admin_details = esc_attr(get_theme_mod('newsair_enable_single_post_admin_details','true')); ?>
                                         <h4 class="title sm mb-0">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array('before' => 'Permalink to: ','after'  => '') ); ?>">
-                                            <?php the_title(); ?>
+                                                <?php the_title(); ?>
                                             </a>
                                         </h4> 
                                         <div class="bs-blog-meta">
                                             <?php if($newsair_enable_single_post_admin_details == true){  newsair_author_content(); } ?>
                                             <?php if($newsair_enable_single_post_date == true) { ?>
-                                                <span class="bs-blog-date"> <a href="<?php echo esc_url(get_month_link(get_post_time('Y'),get_post_time('m'))); ?>"> <?php echo esc_html(get_the_date('M j, Y')); ?></a></span>
+                                            <span class="bs-blog-date"> <a href="<?php echo esc_url(get_month_link(get_post_time('Y'),get_post_time('m'))); ?>"> <?php echo esc_html(get_the_date('M j, Y')); ?></a></span>
                                             <?php } ?>
                                         </div>
+                                        <a class="link-div" href="<?php the_permalink(); ?>"></a>
                                     </div>
                                 </div>
                             </div>
