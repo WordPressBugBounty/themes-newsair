@@ -324,3 +324,10 @@ input[type="date"] {
     line-height: 1.2;
     color: inherit !important;
 }
+/* admin notice media query */
+@media(max-width: 767px){  
+  .newsair-notice-started .newsair-notice-content{
+    flex-direction: column;
+    gap: 30px;
+  }
+}
