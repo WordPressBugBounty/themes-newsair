@@ -67,18 +67,18 @@ li.customize-control-color .wp-picker-container .wp-color-result.button {
   display: none;
 }
 #customize-control-header_menu_layout img{margin-bottom: 25px;
-  border: 1px solid #2271b1;
+  border: 1px solid var(--wp-admin-theme-color);
 }
 #customize-control-header_menu_layout .ui-checkboxradio-checked img, #customize-control-blog_layout .ui-checkboxradio-checked img,  
 #customize-control-newsair_footer_layout img .ui-checkboxradio-checked img, #customize-control-newsair_slider_layout img 
 .ui-checkboxradio-checked img, #customize-control-newsair_footer_layout img .ui-checkboxradio-checked img {
-  border: 4px solid #00d084;
+  border: 4px solid var(--wp-admin-theme-color);
 }
 #customize-controls img {
-  border: 1px solid #2271b1;
+  border: 1px solid var(--wp-admin-theme-color);
 }
 #customize-controls .ui-checkboxradio-checked img {
-  border: 4px solid #00d084;
+  border: 4px solid var(--wp-admin-theme-color);
 }
 #customize-control-blog_layout img{margin-right: 25px; margin-bottom: 25px;}
 #customize-control-newsair_slider_layout img, #customize-control-newsair_footer_layout img{margin-bottom: 10px;width: 100px;margin-right: 25px;}
@@ -87,10 +87,10 @@ li.customize-control-color .wp-picker-container .wp-color-result.button {
 #customize-control-newsair_skin_mode img{border: none;}
 .newsair-notice_text .notice p, .notice-title, div.updated p, div.error p, .form-table td .notice p  {padding-right: 25px; font-size: 15px;}
 .dashicons-external:before {
-  color: #2271b1;
+  color: var(--wp-admin-theme-color);
 }
 #customize-controls .ui-checkboxradio-checked img {
-  border: 4px solid #0025ff;
+  border: 4px solid var(--wp-admin-theme-color);
 }
 .button.button-hero a::before {
   content: "\f17b";
@@ -323,6 +323,10 @@ input[type="date"] {
 .admin-bar .newsair-notice-buttons :is( .newsair-btn-get-started, .newsair-btn-get-started-customize) .dashicons {
     line-height: 1.2;
     color: inherit !important;
+}
+#customize-controls li#accordion-section-newsair_pro_upsell .accordion-section-title .alignright{
+  color: #fff;
+  border-color: #fff;
 }
 /* admin notice media query */
 @media(max-width: 767px){  

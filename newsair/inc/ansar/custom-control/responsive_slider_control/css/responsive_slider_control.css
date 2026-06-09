@@ -36,7 +36,7 @@
     background-color: transparent;
 }
 .select-devices-preview button:hover, .select-devices-preview button.active {
-    color: #2271b1;
+    color: var(--wp-admin-theme-color);
 }
 .select-devices-preview button i {
     font-size: 16px;

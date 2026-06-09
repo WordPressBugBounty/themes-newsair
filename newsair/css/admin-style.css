@@ -20,7 +20,7 @@
     letter-spacing: 1px;
     line-height: 1;
     text-transform: uppercase;
-    color: #3292db;
+    color: var(--wp-admin-theme-color);
 }
 .customize-control-hidden label {
     margin-bottom: 0;
