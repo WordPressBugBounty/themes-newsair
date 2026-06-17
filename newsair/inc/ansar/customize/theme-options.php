@@ -52,11 +52,67 @@ $wp_customize->add_setting('breadcrumb_settings', array(
 $wp_customize->add_control(new Newsair_Toggle_Control( $wp_customize, 'breadcrumb_settings', 
     array(
         'label' => esc_html__('Hide/Show Breadcrumb', 'newsair'),
+        'description' => __('Hide/Show on', 'newsair'),
         'type' => 'toggle',
         'section' => 'newsair_breadcrumb_settings',
         
     )
 ));
+
+$wp_customize->add_setting('enable_archive_bcrumb',
+    array(
+        'default' => true,
+        'sanitize_callback' => 'newsair_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('enable_archive_bcrumb',
+    array(
+        'label' => esc_html__('Archive Pages', 'newsair'),
+        'section' => 'newsair_breadcrumb_settings',
+        'type' => 'checkbox',
+
+    )
+);
+$wp_customize->add_setting('enable_single_bcrumb',
+    array(
+        'default' => true,
+        'sanitize_callback' => 'newsair_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('enable_single_bcrumb',
+    array(
+        'label' => esc_html__('Single Pages', 'newsair'),
+        'section' => 'newsair_breadcrumb_settings',
+        'type' => 'checkbox',
+    )
+);
+$wp_customize->add_setting('enable_search_bcrumb',
+    array(
+        'default' => true,
+        'sanitize_callback' => 'newsair_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('enable_search_bcrumb',
+    array(
+        'label' => esc_html__('Search', 'newsair'),
+        'section' => 'newsair_breadcrumb_settings',
+        'type' => 'checkbox',
+    )
+);
+$wp_customize->add_setting('enable_pages_bcrumb',
+    array(
+        'default' => true,
+        'sanitize_callback' => 'newsair_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('enable_pages_bcrumb',
+    array(
+        'label' => esc_html__('Pages', 'newsair'),
+        'section' => 'newsair_breadcrumb_settings',
+        'type' => 'checkbox',
+    )
+);
+
 
 //Type Of Bredcrumb 
 $wp_customize->add_setting( 'newsair_site_breadcrumb_type', array(

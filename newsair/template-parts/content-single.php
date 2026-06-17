@@ -5,7 +5,7 @@
  */
 ?>
 <!--==================== breadcrumb section ====================-->
-<?php do_action('newsair_breadcrumb_content'); ?>
+<?php if(get_theme_mod('enable_single_bcrumb',true)) { do_action('newsair_breadcrumb_content'); } ; ?>
         <!--col-md-->
 <?php $newsair_single_page_layout = get_theme_mod('newsair_single_page_layout','single-align-content-right');
 if($newsair_single_page_layout == "single-align-content-left") { ?>
