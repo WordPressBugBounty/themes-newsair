@@ -4,8 +4,8 @@ Author: Themeansar
 Requires at least: WordPress 6.7
 Tested up to: WordPress 7.0
 Requires PHP: 7.4
-Stable tag: 2.2.9
-Version: 2.2.9
+Stable tag: 2.3.0
+Version: 2.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -516,3 +516,6 @@ Source: https://stocksnap.io/photo/train-station-6FHSE43K4R
 
 = Version 2.2.9
 * Added Customizer options to disable breadcrumbs on archive, single, page, and search views.
+
+= Version 2.3.0
+* Fixed Styling Issues.
