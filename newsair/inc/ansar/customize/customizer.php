@@ -629,6 +629,24 @@ function newsair_theme_option( $wp_customize ){
       
     ) ) );
     
+    $wp_customize->get_control( 'display_header_text')->label = __('Display Site Title', 'newsair');
+
+    $wp_customize->add_setting('display_header_tagline',
+        array(
+            'default' => false,
+            'transport' => 'postMessage',
+            'sanitize_callback' => 'newsair_sanitize_checkbox',
+        )
+    );
+    $wp_customize->add_control('display_header_tagline',
+        array(
+            'label' => __('Display Tagline', 'newsair'),
+            'section' => 'newsair_site_title_section',
+            'type' => 'checkbox',
+            'priority' => 50,
+
+        )
+    );
     // Add switch for Center Site Title and Tagline
     $wp_customize->add_setting('newsair_center_logo_title',
         array(
