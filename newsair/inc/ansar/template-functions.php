@@ -760,8 +760,8 @@ if ( class_exists( 'WooCommerce' ) ) {
     add_filter( 'woocommerce_pagination_args', 'newsair_custom_pagination_icons' );
 
     /* Change WooCommerce Gallery Thumbnails to 5 Columns */
-    function blogus_change_product_gallery_columns() {
+    function newsair_change_product_gallery_columns() {
         return 5; 
     }
-    add_filter( 'woocommerce_product_thumbnails_columns', 'blogus_change_product_gallery_columns' );
+    add_filter( 'woocommerce_product_thumbnails_columns', 'newsair_change_product_gallery_columns' );
 }

@@ -4,8 +4,8 @@ Author: Themeansar
 Requires at least: WordPress 6.7
 Tested up to: WordPress 7.0
 Requires PHP: 7.4
-Stable tag: 2.3.1
-Version: 2.3.1
+Stable tag: 2.3.2
+Version: 2.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -522,3 +522,7 @@ Source: https://stocksnap.io/photo/train-station-6FHSE43K4R
 
 = Version 2.3.1
 * Added Site Title and Tagline visibility options.
+
+= Version 2.3.2
+* Remove Unnecessary Code.
+* Added Selective Refresh.
