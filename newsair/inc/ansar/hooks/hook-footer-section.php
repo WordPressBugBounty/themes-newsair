@@ -39,6 +39,7 @@ if( ! function_exists( 'newsair_footer_copyright' ) ) :
   function newsair_footer_copyright() { 
     $hide_copyright = esc_attr(get_theme_mod('hide_copyright',true));
     $newsair_footer_copyright = get_theme_mod( 'newsair_footer_copyright','Copyright &copy; All rights reserved' );
+    $themeName = !empty(NEWSAIR_THEMEURI) ? '<a href="' . esc_url( NEWSAIR_THEMEURI ) . '" target="_blank">' . esc_html( NEWSAIR_THEME_NAME ) . '</a>': esc_html( NEWSAIR_THEME_NAME );
     if ($hide_copyright == true ) { ?>
       <div class="copyright-overlay">
         <div class="container">
@@ -48,7 +49,7 @@ if( ! function_exists( 'newsair_footer_copyright' ) ) :
                 <p class="mb-0">
                   <span class="text"><?php echo esc_html($newsair_footer_copyright); ?></span>
                   <span class="sep"> | </span>
-                  <?php  printf(esc_html__('%1$s by %2$s.', 'newsair'), '<a href="https://themeansar.com/free-themes/newsair/" target="_blank">Newsair</a>', '<a href="https://themeansar.com" target="_blank">Themeansar</a>'); ?>
+                  <?php  printf(esc_html__('%1$s by %2$s.', 'newsair'), $themeName, '<a href="https://themeansar.com" target="_blank">Themeansar</a>'); ?>
                 </p>
               </div>
               <div class="col-md-6 text-md-end text-xs">
@@ -65,7 +66,7 @@ if( ! function_exists( 'newsair_footer_copyright' ) ) :
                 <p class="mb-0">
                   <span class="text"><?php echo esc_html($newsair_footer_copyright); ?></span>
                   <span class="sep"> | </span>
-                  <?php  printf(esc_html__('%1$s by %2$s.', 'newsair'), '<a href="https://themeansar.com/free-themes/newsair/" target="_blank">Newsair</a>', '<a href="https://themeansar.com" target="_blank">Themeansar</a>'); ?>
+                  <?php  printf(esc_html__('%1$s by %2$s.', 'newsair'), $themeName, '<a href="https://themeansar.com" target="_blank">Themeansar</a>'); ?>
                 </p>
               </div>
             <?php } ?>

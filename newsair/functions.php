@@ -27,9 +27,17 @@
 
 	// Theme version.
 	$newsair_theme = wp_get_theme();
-	define( 'NEWSAIR_THEME_VERSION', $newsair_theme->get( 'Version' ) );
-	define( 'NEWSAIR_THEME_NAME', $newsair_theme->get( 'Name' ) );
 
+	if ( ! defined( 'NEWSAIR_THEME_VERSION' ) ) {
+		define( 'NEWSAIR_THEME_VERSION', $newsair_theme->get( 'Version' ) );
+	}
+
+	if ( ! defined( 'NEWSAIR_THEME_NAME' ) ) {
+		define( 'NEWSAIR_THEME_NAME', $newsair_theme->get( 'Name' ) );
+	}
+	if ( ! defined( 'NEWSAIR_THEMEURI' ) ) {
+		define( 'NEWSAIR_THEMEURI', $newsair_theme->get( 'ThemeURI' ) );
+	}
 	/*-----------------------------------------------------------------------------------*/
 	/*	Enqueue scripts and styles.
 	/*-----------------------------------------------------------------------------------*/
