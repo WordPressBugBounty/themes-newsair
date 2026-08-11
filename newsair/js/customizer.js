@@ -234,4 +234,69 @@
 			$('.bs_upscr i').addClass(newVal);
 		});
 	});
+
+
+	/**
+	 * Define the Live Preview Configuration for Range Controls.
+	 *
+	*/
+    function range_live_load( setting, selector, properties, media_query = true ) {
+        wp.customize( setting, function( value ) {
+            value.bind( function( to ) {
+                var data = {};
+                try {
+                    data = JSON.parse( to );
+                } catch ( e ) {
+                    data = { desktop: to };
+                }
+                var getValue = function( device ) {
+                    return typeof data[ device ] !== 'undefined' ? data[ device ] : '';
+                };
+
+                var getUnit = function( device ) {
+                    return data[ device + '_unit' ] || data.unit || '';
+                };
+
+                var build = function( value, unit ) {
+
+                    if ( value === '' ) {
+                        return '';
+                    }
+
+                    var css = '';
+
+                    properties.forEach( function( property ) {
+                        css += property + ':' + value + unit + ';';
+                    } );
+
+                    return css;
+                };
+
+                var css = selector + '{' + build( getValue( 'desktop' ), getUnit( 'desktop' ) ) + '}';
+
+                if ( media_query ) {
+                    css += '@media (max-width:991px){' + selector + '{' + build( getValue( 'tablet' ), getUnit( 'tablet' ) ) + '}}';
+                    css += '@media (max-width:575px){' + selector + '{' + build( getValue( 'mobile' ), getUnit( 'mobile' ) ) + '}}';
+                }
+
+                var style = 'customizer-' + setting;
+
+                $( '.' + style ).remove();
+                $( 'head' ).append( '<style class="' + style + '">' + css + '</style>' );
+
+            } );
+
+        } );
+
+    }
+
+    range_live_load( 'newsair_slider_title_font_size', '.bs-slide .inner .title', [ 'font-size' ] );
+    range_live_load( 'newsair_tren_edit_title_font_size', '.multi-post-widget .bs-blog-post.three.sm .title', [ 'font-size' ] );
+    range_live_load( 'general_header_image_height', '.bs-default .bs-header-main .inner, .bs-headthree .bs-header-main .inner', [ 'height' ] );
+    range_live_load( 'side_main_logo_width', '.bs-header-main .navbar-brand img, .bs-headfour .navbar-header img', [ 'width' ] );
+    range_live_load( 'newsair_footer_main_logo_height', 'footer .bs-footer-bottom-area .custom-logo', [ 'height' ] );
+    range_live_load( 'newsair_footer_main_logo_width', 'footer .bs-footer-bottom-area .custom-logo', [ 'width' ] );
+    range_live_load( 'newsair_title_font_size', '.site-branding-text .site-title a', [ 'font-size' ] );
+    range_live_load( 'featured_story_title_font_size', '.postcrousel .bs-blog-post .title', [ 'font-size' ] );
+	
 } )( jQuery );

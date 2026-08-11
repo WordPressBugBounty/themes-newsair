@@ -106,48 +106,27 @@ $wp_customize->add_control(new Newsair_Dropdown_Taxonomies_Control($wp_customize
 )); 
 
 // Featured Story Title Font Size
-// For Desktop   
-$wp_customize->add_setting('featured_story_title_fontsize_desktop',array(
-
-    'default' => $newsair_default['featured_story_title_fontsize_desktop'],
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
-// For Tablet   
-$wp_customize->add_setting('featured_story_title_fontsize_tablet',array(
-
-    'default' => $newsair_default['featured_story_title_fontsize_tablet'],
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
-// For Mobile   
-$wp_customize->add_setting('featured_story_title_fontsize_mobile',array(
-
-    'default' => $newsair_default['featured_story_title_fontsize_mobile'],
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
-$wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'featured_story_title_font_size', 
+newsair_migrate_responsive_range(
+    'featured_story_title_font_size',
     array(
-        'label' => __('Title Font Size','newsair'),
-        'section' => 'featured_story_section_settings',
-        'settings' => [
-            'desktop_input' => 'featured_story_title_fontsize_desktop',
-            'tablet_input'  => 'featured_story_title_fontsize_tablet',
-            'mobile_input'  => 'featured_story_title_fontsize_mobile',
-        ],
-        'is_responsive' => true,
-        'input_attrs' => array(
-            'min' => 10,
-            'max' => 120,
-            'step' => 1,
-        ),
-        
-    ) 
+        'desktop' => 'featured_story_title_fontsize_desktop',
+        'tablet'  => 'featured_story_title_fontsize_tablet',
+        'mobile'  => 'featured_story_title_fontsize_mobile',
+    ),
+    $newsair_default['featured_story_title_font_size']
+);
+$wp_customize->add_setting('featured_story_title_font_size', array(
+    'default' => $newsair_default['featured_story_title_font_size'],
+    'transport'         => 'postMessage',
+    'sanitize_callback' => 'newsair_sanitize_range',
 ));
+$wp_customize->add_control(new Newsair_Range_Control( $wp_customize, 'featured_story_title_font_size', array(
+    'label'       => __('Title Font Size', 'newsair'),
+    'section'     => 'featured_story_section_settings',
+    'media_query' => true,
+    'size_unit'   => array( 'px', 'em', 'rem' ),
+    'input_attr'  => array('min'  => 0,'max'  => 200,'step' => 1,),
+)));
 
 $wp_customize->add_setting('featured_story_meta_enable',
     array(

@@ -1,7 +1,17 @@
 <?php 
 // Adding customizer home page setting
 function newsair_style_customizer( $wp_customize ){
-	
+	$newsair_default = newsair_get_default_theme_options();
+
+    newsair_migrate_responsive_range(
+        'general_header_image_height',
+        array(
+            'desktop' => 'desktop_header_image_height',
+            'tablet'  => 'tablet_header_image_height',
+            'mobile'  => 'mobile_header_image_height',
+        ),
+        $newsair_default['general_header_image_height']
+    );
     class WP_line_break_Customize_Control extends WP_Customize_Control {
         public $type = 'new_menu';
 
@@ -98,44 +108,18 @@ function newsair_style_customizer( $wp_customize ){
     ) );
 
     //================ Header Image Height =================
-    // For Desktop   
-    $wp_customize->add_setting('desktop_header_image_height',array(
-        'default' => '200',
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'absint',
-        'transport' => 'postMessage',
+    $wp_customize->add_setting('general_header_image_height', array(
+        'default' => $newsair_default['general_header_image_height'],
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'newsair_sanitize_range',
     ));
-    // For Tablet   
-    $wp_customize->add_setting('tablet_header_image_height',array(
-        'default' => '150',
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'absint',
-        'transport' => 'postMessage',
-    ));
-    // For Mobile   
-    $wp_customize->add_setting('mobile_header_image_height',array(
-        'default' => '130',
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'absint',
-        'transport' => 'postMessage',
-    ));
-    $wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'general_header_image_height', array(
-        'label' => __('Height', 'newsair' ),
-        'section' => 'header_image',
-        'settings' => [
-
-        'desktop_input' => 'desktop_header_image_height',
-        'tablet_input' => 'tablet_header_image_height',
-        'mobile_input' => 'mobile_header_image_height',
-        ],
-        'is_responsive' => true,
-        'input_attrs' => array(
-            'min' => 0,
-            'max' => 500,
-            'step' => 1,
-        ),
-    ) ) ); 
-
+    $wp_customize->add_control(new Newsair_Range_Control( $wp_customize, 'general_header_image_height', array(
+        'label'       => __('Height', 'newsair'),
+        'section'     => 'header_image',
+        'media_query' => true,
+        'size_unit'   => array( 'px', '%', 'vh' ),
+        'input_attr'  => array('min'  => 0,'max'  => 500,'step' => 1,),
+    )));
 }
 
 

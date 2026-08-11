@@ -107,6 +107,24 @@ add_action('customize_preview_init', 'newsair_customize_preview_js');
 function newsair_theme_option( $wp_customize ){
 
     $newsair_default = newsair_get_default_theme_options();
+    newsair_migrate_responsive_range(
+        'side_main_logo_width',
+        array(
+            'desktop' => 'desktop_side_logo_width',
+            'tablet'  => 'tablet_side_logo_width',
+            'mobile'  => 'mobile_side_logo_width',
+        ),
+        $newsair_default['side_main_logo_width']
+    );
+    newsair_migrate_responsive_range(
+        'newsair_title_font_size',
+        array(
+            'desktop' => 'newsair_title_fontsize_desktop',
+            'tablet'  => 'newsair_title_fontsize_tablet',
+            'mobile'  => 'newsair_title_fontsize_mobile',
+        ),
+        $newsair_default['newsair_title_font_size']
+    );
 
     function newsair_sanitize_text( $input ) {
         return wp_kses_post( force_balance_tags( $input ) );
@@ -123,52 +141,20 @@ function newsair_theme_option( $wp_customize ){
         'panel' => 'newsair_site_identity_panel',
     ));
     
-    //Site Logo Width
-    // For Desktop   
-    $wp_customize->add_setting('desktop_side_logo_width',array(
-
-        'default' => '250',
-        'capability' => 'edit_theme_options',
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'absint',
-
+    //Site Logo Width    
+    $wp_customize->add_setting('side_main_logo_width', array(
+        'default' => $newsair_default['side_main_logo_width'],
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'newsair_sanitize_range',
     ));
-    // For Tablet   
-    $wp_customize->add_setting('tablet_side_logo_width',array(
+    $wp_customize->add_control(new Newsair_Range_Control( $wp_customize, 'side_main_logo_width', array(
+        'label'       => __('Logo Width', 'newsair'),
+        'section'     => 'title_tagline',
+        'media_query' => true,
+        'size_unit'   => array( 'px', '%', 'vw' ),
+        'input_attr'  => array('min'  => 0,'max'  => 400,'step' => 1,),
+    )));
 
-        'default' => '200',
-        'capability' => 'edit_theme_options',
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'absint',
-
-    ));
-    // For Mobile   
-    $wp_customize->add_setting('mobile_side_logo_width',array(
-
-        'default' => '150',
-        'capability' => 'edit_theme_options',
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'absint',
-
-    ));
-    $wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'side_main_logo_width', array(
-      'label' => __('Logo Width' , 'newsair' ),
-      'section' => 'title_tagline',
-      'settings' => [
-
-        'desktop_input' => 'desktop_side_logo_width',
-        'tablet_input' => 'tablet_side_logo_width',
-        'mobile_input' => 'mobile_side_logo_width',
-      ],
-      'is_responsive' => true,
-      'input_attrs' => array(
-        'min' => 0,
-        'max' => 400,
-        'step' => 1,
-      ),
-      
-    ) ) );
-    
     // Add Section
     $wp_customize->add_section( 'newsair_site_title_section', array(
         'title' => esc_html__( 'Site Title & Tagline', 'newsair' ),
@@ -180,50 +166,18 @@ function newsair_theme_option( $wp_customize ){
     $wp_customize->get_control( 'blogdescription' )->section = 'newsair_site_title_section';
   
     /*--- Site title Font size **/
-    // For Desktop   
-    $wp_customize->add_setting('newsair_title_fontsize_desktop',array(
-
-    'default' => $newsair_default['newsair_title_fontsize_desktop'],
-    'capability' => 'edit_theme_options',
-    'transport' => 'postMessage',
-    'sanitize_callback' => 'absint',
-    
+    $wp_customize->add_setting('newsair_title_font_size', array(
+        'default' => $newsair_default['newsair_title_font_size'],
+        'transport'         => 'postMessage',
+        'sanitize_callback' => 'newsair_sanitize_range',
     ));
-    // For Tablet   
-    $wp_customize->add_setting('newsair_title_fontsize_tablet',array(
-    
-        'default' => $newsair_default['newsair_title_fontsize_tablet'],
-        'capability' => 'edit_theme_options',
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'absint',
-    
-    ));
-    // For Mobile   
-    $wp_customize->add_setting('newsair_title_fontsize_mobile',array(
-    
-        'default' => $newsair_default['newsair_title_fontsize_mobile'],
-        'capability' => 'edit_theme_options',
-        'transport' => 'postMessage',
-        'sanitize_callback' => 'absint',
-    
-    ));
-    $wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'newsair_title_font_size', array(
-
-      'label' => __('Site Title Size', 'newsair'),
-      'section' => 'newsair_site_title_section',
-      'settings' => [
-        'desktop_input' => 'newsair_title_fontsize_desktop',
-        'tablet_input'  => 'newsair_title_fontsize_tablet',
-        'mobile_input'  => 'newsair_title_fontsize_mobile',
-      ],
-      'is_responsive' => true,
-      'input_attrs' => array(
-        'min' => 0,
-        'max' => 100,
-        'step' => 1,
-      ),
-      
-    ) ) );
+    $wp_customize->add_control(new Newsair_Range_Control( $wp_customize, 'newsair_title_font_size', array(
+        'label'       => __('Site Title Size', 'newsair'),
+        'section'     => 'newsair_site_title_section',
+        'media_query' => true,
+        'size_unit'   => array( 'px', 'em', 'rem' ),
+        'input_attr'  => array('min'  => 0,'max'  => 400,'step' => 1,),
+    )));
     
     $wp_customize->get_control( 'display_header_text')->label = __('Display Site Title', 'newsair');
 

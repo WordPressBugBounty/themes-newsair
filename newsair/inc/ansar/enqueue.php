@@ -50,6 +50,8 @@ function newsair_scripts() {
 	
 	wp_enqueue_script('jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js', array('jquery'));
 
+	newsup_customize_options();
+
 }
 add_action('wp_enqueue_scripts', 'newsair_scripts');
 

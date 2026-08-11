@@ -114,3 +114,41 @@ if ( ! function_exists( 'newsair_sanitize_alpha_color' ) ) :
         return '';
     }
 endif;
+
+/**
+ * Sanitize values for range inputs.
+ *
+ * @param string $input Control input.
+ */
+function newsair_sanitize_range( $input ) {
+    if ( $input === '' ) { return ''; }
+
+    if ( is_string( $input ) ) {
+        $decoded = json_decode( $input, true );
+        
+        if ( is_array( $decoded ) ) {
+            $sanitized = array();
+            $allowed_units = array( 'px', '%', 'em', 'rem', 'vh', 'vw' );
+            $fallback_unit = isset( $decoded['unit'] ) && in_array( $decoded['unit'], $allowed_units, true ) ? $decoded['unit'] : 'px';
+            
+            $sanitized['desktop'] = ( isset( $decoded['desktop'] ) && is_numeric( $decoded['desktop'] ) ) ? floatval( $decoded['desktop'] ) : '';
+            $sanitized['tablet']  = ( isset( $decoded['tablet'] )  && is_numeric( $decoded['tablet'] ) )  ? floatval( $decoded['tablet'] )  : '';
+            $sanitized['mobile']  = ( isset( $decoded['mobile'] )  && is_numeric( $decoded['mobile'] ) )  ? floatval( $decoded['mobile'] )  : '';
+
+            foreach ( array( 'desktop', 'tablet', 'mobile' ) as $device ) {
+                $unit_key = "{$device}_unit";
+                $unit = isset( $decoded[ $unit_key ] ) ? $decoded[ $unit_key ] : $fallback_unit;
+
+                $sanitized[ $unit_key ] = in_array( $unit, $allowed_units, true ) ? $unit : $fallback_unit;
+            }
+            
+            return wp_json_encode( $sanitized );
+        }
+    }
+    
+    return is_numeric( $input ) ? floatval( $input ) : '';
+}
+
+function newsair_json( $string ) {
+    return is_string( $string ) && is_array( json_decode( $string, true ) ) ? true : false;
+}

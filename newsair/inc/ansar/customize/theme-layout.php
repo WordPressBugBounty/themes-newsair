@@ -15,25 +15,18 @@ $wp_customize->add_section( 'newsair_theme_sidebar_setting' , array(
 ) );
 
 // Sidebar Width
-$wp_customize->add_setting('newsair_theme_sidebar_width',array(
-
-    'default' => 310,
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
+$wp_customize->add_setting('newsair_theme_sidebar_width', array(
+    'default' => $newsair_default['newsair_theme_sidebar_width'],
+    'transport'         => 'refresh',
+    'sanitize_callback' => 'newsair_sanitize_range',
 ));
-$wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'newsair_theme_sidebar_width', array(
-
-    'label' => __('Sidebar Width', 'newsair'),
-    'section' => 'newsair_theme_sidebar_setting',
-    'settings' => [ 'desktop_input' => 'newsair_theme_sidebar_width' ],
-    'is_responsive' => false,
-    'input_attrs' => array(
-        'min' => 10,
-        'max' => 1200,
-        'step' => 1,
-    ),
-) ) );
+$wp_customize->add_control(new Newsair_Range_Control( $wp_customize, 'newsair_theme_sidebar_width', array(
+    'label'       => __('Sidebar Width', 'newsair'),
+    'section'     => 'newsair_theme_sidebar_setting',
+    'media_query' => false,
+    'size_unit'   => array( 'px', '%' ),
+    'input_attr'  => array('min'  => 10,'max'  => 1200,'step' => 1,),
+)));
 
 $wp_customize->add_setting(
     'newsair_single_page_sidebar_width_heading',
@@ -52,27 +45,19 @@ $wp_customize->add_control(
     )
 );
 
-// Sidebar Width
-$wp_customize->add_setting('newsair_single_page_sidebar_width',array(
-
-    'default' => 310,
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint'
-
+// Sidebar
+$wp_customize->add_setting('newsair_single_page_sidebar_width', array(
+    'default' => $newsair_default['newsair_single_page_sidebar_width'],
+    'transport'         => 'refresh',
+    'sanitize_callback' => 'newsair_sanitize_range',
 ));
-$wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'newsair_single_page_sidebar_width', array(
-
-    'label' => __('Sidebar Width' , 'newsair'),
-    'section' => 'newsair_theme_sidebar_setting',
-    'settings' => [ 'desktop_input' => 'newsair_single_page_sidebar_width' ],
-    'is_responsive' => false,
-    'input_attrs' => array(
-        'min' => 10,
-        'max' => 1200,
-        'step' => 1,
-    ),
-) ) );   
-
+$wp_customize->add_control(new Newsair_Range_Control( $wp_customize, 'newsair_single_page_sidebar_width', array(
+    'label'       => __('Sidebar Width', 'newsair'),
+    'section'     => 'newsair_theme_sidebar_setting',
+    'media_query' => false,
+    'size_unit'   => array( 'px', '%'),
+    'input_attr'  => array('min'  => 10,'max'  => 1200,'step' => 1,),
+)));
 //Theme Layout
 $wp_customize->add_section( 'newsair_theme_layout_setting' , array(
     'title' => __('Theme Layout', 'newsair'),

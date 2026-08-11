@@ -10,8 +10,10 @@ function newsair_register_custom_controls( $wp_customize ) {
 
     require_once  get_template_directory() . '/inc/ansar/custom-control/custom_tab_control/custom_tab_control_class.php';
     require_once  get_template_directory() . '/inc/ansar/custom-control/responsive_slider_control/responsive_slider_control_class.php';
+    require_once  get_template_directory() . '/inc/ansar/custom-control/range/class-range.php';
 
     $wp_customize->register_control_type( 'Newsair_Toggle_Control' );
+    $wp_customize->register_control_type( 'Newsair_Range_Control' );
 
 }
 endif;

@@ -111,88 +111,51 @@ $wp_customize->add_control(
     )
 );
 
-// For Desktop   
-$wp_customize->add_setting('desktop_newsair_footer_logo_width',array(
-
-    'default' => '210',
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
-// For Tablet   
-$wp_customize->add_setting('tablet_newsair_footer_logo_width',array(
-
-    'default' => '170',
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
-// For Mobile   
-$wp_customize->add_setting('mobile_newsair_footer_logo_width',array(
-
-    'default' => '130',
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
-$wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'newsair_footer_main_logo_width', array(
-    'label' => __('Logo Width', 'newsair' ),
-    'section' => 'footer_options',
-    'settings' => [
-        'desktop_input' => 'desktop_newsair_footer_logo_width',
-        'tablet_input' => 'tablet_newsair_footer_logo_width',
-        'mobile_input' => 'mobile_newsair_footer_logo_width',
-    ],
-    'is_responsive' => true,
-    'input_attrs' => array(
-            'min' => 0,
-            'max' => 500,
-            'step' => 1,
-        ),
-) ) );
-
-// For Desktop   
-$wp_customize->add_setting('desktop_newsair_footer_logo_height',array(
-
-    'default' => '70',
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
-// For Tablet   
-$wp_customize->add_setting('tablet_newsair_footer_logo_height',array(
-
-    'default' => '50',
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
-// For Mobile   
-$wp_customize->add_setting('mobile_newsair_footer_logo_height',array(
-
-    'default' => '40',
-    'capability' => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-
-));
-$wp_customize->add_control( new Responsive_slider_control( $wp_customize, 'newsair_footer_main_logo_height', array(
-    'label' => __('Logo Height' , 'newsair' ),
-    'section' => 'footer_options',
-    'settings' => [
-
-    'desktop_input' => 'desktop_newsair_footer_logo_height',
-    'tablet_input' => 'tablet_newsair_footer_logo_height',
-    'mobile_input' => 'mobile_newsair_footer_logo_height',
-    ],
-    'is_responsive' => true,
-    'input_attrs' => array(
-    'min' => 0,
-    'max' => 300,
-    'step' => 1,
+// Footer Logo Width
+newsair_migrate_responsive_range(
+    'newsair_footer_main_logo_width',
+    array(
+        'desktop' => 'desktop_newsair_footer_logo_width',
+        'tablet'  => 'tablet_newsair_footer_logo_width',
+        'mobile'  => 'mobile_newsair_footer_logo_width',
     ),
-    
-) ) );
+    $newsair_default['newsair_footer_main_logo_width']
+);
+$wp_customize->add_setting('newsair_footer_main_logo_width', array(
+    'default' => $newsair_default['newsair_footer_main_logo_width'],
+    'transport'         => 'postMessage',
+    'sanitize_callback' => 'newsair_sanitize_range',
+));
+$wp_customize->add_control(new Newsair_Range_Control( $wp_customize, 'newsair_footer_main_logo_width', array(
+    'label'       => __('Logo Width', 'newsair'),
+    'section'     => 'footer_options',
+    'media_query' => true,
+    'size_unit'   => array( 'px', '%', 'vw' ),
+    'input_attr'  => array('min'  => 0,'max'  => 500,'step' => 1,),
+)));
 
+// Footer Logo Height
+newsair_migrate_responsive_range(
+    'newsair_footer_main_logo_height',
+    array(
+        'desktop' => 'desktop_newsair_footer_logo_height',
+        'tablet'  => 'tablet_newsair_footer_logo_height',
+        'mobile'  => 'mobile_newsair_footer_logo_height',
+    ),
+    $newsair_default['newsair_footer_main_logo_height']
+);
+$wp_customize->add_setting('newsair_footer_main_logo_height', array(
+    'default' => $newsair_default['newsair_footer_main_logo_height'],
+    'transport'         => 'postMessage',
+    'sanitize_callback' => 'newsair_sanitize_range',
+));
+$wp_customize->add_control(new Newsair_Range_Control( $wp_customize, 'newsair_footer_main_logo_height', array(
+    'label'       => __('Logo Height', 'newsair'),
+    'section'     => 'footer_options',
+    'media_query' => true,
+    'size_unit'   => array( 'px', '%', 'vh' ),
+    'input_attr'  => array('min'  => 0,'max'  => 300,'step' => 1,),
+)));
 //Footer Content
 $wp_customize->add_setting('footer_content_title',
     array(

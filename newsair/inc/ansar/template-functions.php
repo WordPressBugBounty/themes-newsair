@@ -349,30 +349,6 @@ function newsair_hide_shop_page_title( $title ) {
     return $title;
 }
 
-function newsair_footer_logo_size(){
-    ?>
-    <style>
-        footer .bs-footer-bottom-area .custom-logo{
-            width:<?php echo esc_attr(get_theme_mod('desktop_newsair_footer_logo_width','210').'px'); ?>;
-            height:<?php echo esc_attr(get_theme_mod('desktop_newsair_footer_logo_height','70').'px'); ?>;
-        }
-
-        @media (max-width: 991.98px)  {
-            footer .bs-footer-bottom-area .custom-logo{
-                width:<?php echo esc_attr(get_theme_mod('tablet_newsair_footer_logo_width','170').'px'); ?>; 
-                height:<?php echo esc_attr(get_theme_mod('tablet_newsair_footer_logo_height','50').'px'); ?>;
-            }
-        }
-        @media (max-width: 575.98px) {
-            footer .bs-footer-bottom-area .custom-logo{
-                width:<?php echo esc_attr(get_theme_mod('mobile_newsair_footer_logo_width','130').'px'); ?>; 
-                height:<?php echo esc_attr(get_theme_mod('mobile_newsair_footer_logo_height','40').'px'); ?>;
-            }
-        }
-    </style>
-<?php } 
-add_action('wp_footer','newsair_footer_logo_size');
-
 function newsair_social_share_post($post) {
 
     $newsair_blog_post_icon_enable = esc_attr(get_theme_mod('newsair_blog_post_icon_enable',true));
@@ -539,28 +515,12 @@ if ( ! function_exists( 'newsair_header_color' ) ) :
 
 function newsair_header_color() {
     $newsair_logo_text_color = get_header_textcolor();
-    $newsair_title_fontsize_desktop = newsair_get_option('newsair_title_fontsize_desktop');
-    $newsair_title_fontsize_tablet = newsair_get_option('newsair_title_fontsize_tablet');
-    $newsair_title_fontsize_mobile = newsair_get_option('newsair_title_fontsize_mobile');
-
+    
     ?>
     <style type="text/css">        
         .site-title a,
         .site-description {
             color: #<?php echo esc_attr( $newsair_logo_text_color ); ?>;
-        }
-        .site-branding-text .site-title a {
-            font-size: <?php echo esc_attr( $newsair_title_fontsize_desktop ); ?>px;
-        }
-        @media (max-width: 991.98px)  {
-            .site-branding-text .site-title a {
-                font-size: <?php echo esc_attr( $newsair_title_fontsize_tablet ); ?>px;
-            }
-        }
-        @media (max-width: 575.98px) {
-            .site-branding-text .site-title a {
-                font-size: <?php echo esc_attr( $newsair_title_fontsize_mobile ); ?>px;
-            }
         }
     </style>
     <?php
@@ -725,6 +685,112 @@ if ( ! function_exists( 'newsair_search_count' ) ) :
         <?php
     }
 endif;
+
+/**
+ * Generate CSS for range controls.
+ *
+ * @param string       $selector
+ * @param mixed        $default_val
+ * @param mixed        $current_val
+ * @param string|array $css_prop
+ * @param bool         $media_query
+ *
+ * @return string
+ */
+function newsair_range_css( $selector, $default_val, $current_val, $css_prop, $media_query = true ) {
+
+    $defaults = array(
+        'desktop'      => '',
+        'tablet'       => '',
+        'mobile'       => '',
+        'unit'         => '',
+        'desktop_unit' => '',
+        'tablet_unit'  => '',
+        'mobile_unit'  => '',
+    );
+
+    // Default values.
+    if ( is_string( $default_val ) ) {
+        $decoded = json_decode( $default_val, true );
+        if ( is_array( $decoded ) ) {
+            $defaults = array_merge( $defaults, $decoded );
+        } else {
+            $defaults['desktop'] = $default_val;
+        }
+    } elseif ( is_numeric( $default_val ) ) {
+        $defaults['desktop'] = $default_val;
+    }
+
+    foreach ( array( 'desktop', 'tablet', 'mobile' ) as $device ) {
+        $unit_key = "{$device}_unit";
+
+        if ( empty( $defaults[ $unit_key ] ) ) {
+            $defaults[ $unit_key ] = $defaults['unit'];
+        }
+    }
+
+    $current = $defaults;
+
+    // Current values.
+    if ( is_string( $current_val ) ) {
+        $decoded = json_decode( $current_val, true );
+        if ( is_array( $decoded ) ) {
+            $current = array_merge( $current, $decoded );
+        } else {
+            $current['desktop'] = $current_val;
+        }
+    } elseif ( is_numeric( $current_val ) ) {
+        $current['desktop'] = $current_val;
+    }
+
+    foreach ( array( 'desktop', 'tablet', 'mobile' ) as $device ) {
+        $unit_key = "{$device}_unit";
+        if ( empty( $current[ $unit_key ] ) ) {
+            $current[ $unit_key ] = ! empty( $current['unit'] ) ? $current['unit'] : $defaults[ $unit_key ];
+        }
+    }
+
+    $build_rule = function( $value, $unit ) use ( $css_prop ) {
+
+        $css = '';
+        if ( is_array( $css_prop ) ) {
+            foreach ( $css_prop as $property ) {
+                $css .= "{$property}: " . esc_attr( $value ) . esc_attr( $unit ) . "; ";
+            }
+        } else {
+            $css .= "{$css_prop}: " . esc_attr( $value ) . esc_attr( $unit ) . "; ";
+        }
+        return $css;
+    };
+
+    $css = '';
+
+    // Non-responsive.
+    if ( ! $media_query ) {
+        if ( '' !== $current['desktop'] && ( $current['desktop'] !== $defaults['desktop'] || $current['desktop_unit'] !== $defaults['desktop_unit'] ) ) {
+            $css .= "{$selector} { {$build_rule( $current['desktop'], $current['desktop_unit'] )} }";
+        }
+        return $css;
+    }
+
+    // Desktop.
+    if ( '' !== $current['desktop'] && ( $current['desktop'] !== $defaults['desktop'] || $current['desktop_unit'] !== $defaults['desktop_unit'] ) ) {
+        $css .= "{$selector} { {$build_rule( $current['desktop'], $current['desktop_unit'] )} }";
+    }
+
+    // Tablet.
+    if ( '' !== $current['tablet'] && ( $current['tablet'] !== $defaults['tablet'] || $current['tablet_unit'] !== $defaults['tablet_unit'] ) ) {
+        $css .= "@media (max-width:991px){ {$selector} { {$build_rule( $current['tablet'], $current['tablet_unit'] )} } }";
+    }
+
+    // Mobile.
+    if ( '' !== $current['mobile'] && ( $current['mobile'] !== $defaults['mobile'] || $current['mobile_unit'] !== $defaults['mobile_unit'] ) ) {
+        $css .= "@media (max-width:575px){ {$selector} { {$build_rule( $current['mobile'], $current['mobile_unit'] )} } }";
+    }
+
+    return $css;
+}
+
 
 if ( class_exists( 'WooCommerce' ) ) {
 

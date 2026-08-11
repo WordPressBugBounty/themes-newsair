@@ -10,21 +10,7 @@ function theme_options_color() {
 		:root {
 			--wrap-color: <?php echo esc_attr($body_background_color); ?>
 		}
-	/*==================== Site Logo ====================*/
-	.bs-header-main .navbar-brand img, .bs-headfour .navbar-header img{
-		width:<?php echo esc_attr(get_theme_mod('desktop_side_logo_width','250').'px'); ?>;
-		height: auto;
-	}
-	@media (max-width: 991.98px)  {
-		.m-header .navbar-brand img, .bs-headfour .navbar-header img{
-			width:<?php echo esc_attr(get_theme_mod('tablet_side_logo_width','200').'px'); ?>; 
-		}
-	}
-	@media (max-width: 575.98px) {
-		.m-header .navbar-brand img, .bs-headfour .navbar-header img{
-			width:<?php echo esc_attr(get_theme_mod('mobile_side_logo_width','150').'px'); ?>; 
-		}
-	}
+	
 	/*==================== Site title and tagline ====================*/
 	.site-title a, .site-description{
 		color: #<?php echo esc_attr(get_theme_mod('header_textcolor', "000")); ?>;
@@ -58,43 +44,7 @@ function theme_options_color() {
 			background: var(--box-color);
 		}
 	}
-	/*=================== Slider Color ===================*/
-	.multi-post-widget .bs-blog-post.three.sm .title{
-		font-size:<?php echo newsair_get_option('newsair_trend_title_fontsize_desktop').'px'; ?>;
-	}
-	.bs-slide .inner .title{
-		font-size:<?php echo newsair_get_option('slider_title_fontsize_desktop').'px'; ?>;
-	} 
-	@media (max-width: 991.98px)  {
-		.bs-slide .inner .title{ 
-			font-size:<?php echo newsair_get_option('slider_title_fontsize_tablet').'px'; ?>;
-		}
-		.multi-post-widget .bs-blog-post.three.sm .title{
-			font-size:<?php echo newsair_get_option('newsair_trend_title_fontsize_tablet').'px'; ?>;
-		}
-	}
-	@media (max-width: 575.98px) {
-		.bs-slide .inner .title{ 
-			font-size:<?php echo newsair_get_option('slider_title_fontsize_mobile').'px'; ?>;
-		}
-		.multi-post-widget .bs-blog-post.three.sm .title{
-			font-size:<?php echo newsair_get_option('newsair_trend_title_fontsize_mobile').'px'; ?>;
-		}
-	}
-	/*=================== Featured Story ===================*/
-	.postcrousel .bs-blog-post .title{
-		font-size: <?php echo newsair_get_option('featured_story_title_fontsize_desktop').'px'; ?>;
-	} 
-	@media (max-width:991px) {
-		.postcrousel .bs-blog-post .title{ 
-			font-size: <?php echo newsair_get_option('featured_story_title_fontsize_tablet').'px'; ?>; 
-		}
-	}
-	@media (max-width:576px) {
-		.postcrousel .bs-blog-post .title{ 
-			font-size: <?php echo newsair_get_option('featured_story_title_fontsize_mobile').'px'; ?>;
-		}
-	}
+	
 	</style>
 <?php } 
  
