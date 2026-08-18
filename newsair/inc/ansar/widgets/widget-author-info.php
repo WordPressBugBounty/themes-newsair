@@ -56,7 +56,7 @@ class newsair_author_info extends WP_Widget {
                 <?php  if( !empty($instance['image_uri']) ): ?>  
                     <img class="rounded-circle" src="<?php echo esc_url($instance['image_uri']); ?>" alt="<?php echo apply_filters('widget_title', $instance['name']); ?>" />
                 <?php endif; ?>
-                <h4><?php echo $instance['name']; ?></h4>
+                <h4 class="name"><?php echo $instance['name']; ?></h4>
                 <p><?php echo $instance['desc'] ?></p>
                 
                 <ul class="bs-social justify-content-center post-share-icons">

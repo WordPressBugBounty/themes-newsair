@@ -616,7 +616,7 @@ a:focus {
 .recentarea-slider .small-post {
 	border-color: #d7d7d7;
 }
-.bs-widget .bs-author h4 {
+.newsair-auhtor-widget .bs-author .name {
 	color: var(--head-color);
 }
 .bs-widget .bs-author {
@@ -853,18 +853,7 @@ footer .wp-block-heading::before {
 	color: var(--pri-color);
 }
 /*==================== general ====================*/
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	color: var(--head-color);
 }
 .btn,
@@ -1118,6 +1107,16 @@ footer .double-category-posts .colinn {
 	padding-bottom: 0;
 	margin-bottom: 30px;
 	background: #060A16;
+}
+footer{
+	.newsair-auhtor-widget{
+		background-color: #121930;
+		.bs-author{
+			.name{
+				color: #fff;
+			}
+		}
+	}
 }
 /* footer .bs-widget .bs-widget-tags a, footer .bs-widget .tagcloud a {
 	background: rgba(255,255,255,0.1);
