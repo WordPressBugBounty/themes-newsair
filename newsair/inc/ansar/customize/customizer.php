@@ -39,21 +39,6 @@ function newsair_get_option($key) {
 }
 endif;
 
-// Load customize default values.
-require get_template_directory().'/inc/ansar/customize/customizer-callback.php';
-
-// Load customize default values.
-require get_template_directory().'/inc/ansar/customize/customizer-default.php';
-
-// Load customize selective Refresh.
-require get_template_directory().'/inc/ansar/customize/selective-refresh-and-partial.php';
-
-
-$repeater_path = trailingslashit( get_template_directory() ) . '/inc/ansar/customizer-repeater/functions.php';
-if ( file_exists( $repeater_path ) ) {
-    require_once( $repeater_path );
-}
-
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -62,34 +47,12 @@ if ( file_exists( $repeater_path ) ) {
 function newsair_customize_register($wp_customize) {
 
 	// Load customize controls.
-	require get_template_directory().'/inc/ansar/customize/customizer-control.php';
-
-    // Load customize sanitize.
-	require get_template_directory().'/inc/ansar/customize/customizer-sanitize.php';
 
     $wp_customize->get_setting( 'custom_logo')->sanitize_callback  	= 'esc_url_raw';
     $wp_customize->get_setting( 'custom_logo')->transport  			= 'postMessage';
 	$wp_customize->get_setting('blogname')->transport         = 'postMessage';
 	$wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
 	$wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
-
-	
-    $default = newsair_get_default_theme_options();
-
-	/*theme option panel info*/
-
-    require get_template_directory().'/inc/ansar/customize/header-options.php';
-
-	require get_template_directory().'/inc/ansar/customize/theme-options.php';
-
-    /*Theme customizer general option*/
-    require get_template_directory().'/inc/ansar/customize/footer-options.php';
-
-	/*theme general layout panel*/
-	require get_template_directory().'/inc/ansar/customize/theme-layout.php';
-
-    /*theme Featured Story*/
-    require get_template_directory().'/inc/ansar/customize/frontpage-featured-story.php';
 
 }
 add_action('customize_register', 'newsair_customize_register');

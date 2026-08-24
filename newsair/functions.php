@@ -8,9 +8,12 @@
  *
  * @since   Newsair 0.0.1
  */ 
-
-	define( 'NEWSAIR_THEME_DIR', get_template_directory() . '/' );
-	define( 'NEWSAIR_THEME_URI', get_template_directory_uri() . '/' );
+	if ( ! defined( 'NEWSAIR_THEME_DIR' ) ) {
+		define( 'NEWSAIR_THEME_DIR', get_template_directory() . '/' );
+	}
+	if ( ! defined( 'NEWSAIR_THEME_URI' ) ) {
+		define( 'NEWSAIR_THEME_URI', get_template_directory_uri() . '/' );
+	}
 	
 	$newsair_theme_path = get_template_directory() . '/inc/ansar/';
 
@@ -69,9 +72,6 @@
 
 	require( $newsair_theme_path  . '/hooks/hooks-init.php');
 
-    /* Customizer Theme Color*/
-	require get_template_directory().'/inc/ansar/customize/customize-theme-style.php';
-
 	/* custom-color file. */
 	require( get_template_directory() . '/css/colors/theme-options-color.php');
 
@@ -86,9 +86,6 @@
 
 	/* Style For Sidebar*/
 	require_once  get_template_directory()  . '/css/custom-style.php';
-
-	/* Typography*/
-	require get_template_directory().'/inc/ansar/customize/customizer_typography.php';
 
 
 if ( ! function_exists( 'newsair_setup' ) ) :
