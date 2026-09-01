@@ -101,7 +101,28 @@ final class Newsair_Customize {
 	*/
 	public function customize_options( $wp_customize ) {
 
-		require NEWSAIR_THEME_DIR . '/inc/ansar/customize/settings/header-options.php';
+		// Panels and Sections 
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/panels-and-sections.php';
+
+		// Header Settings
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/header-image.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/top-bar/breaking-date.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/top-bar/social-icons.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/site-identity/logo.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/site-identity/site-title.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/theme-header/banner-ads.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/theme-header/home-icon.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/theme-header/sticky-header.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/theme-header/search.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/theme-header/dark-mode.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/theme-header/subscribe.php';
+		require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/theme-header/menu-sidebar.php';
+		
+		if( class_exists( 'WooCommerce' ) ) { 
+			require NEWSAIR_THEME_DIR . 'inc/ansar/customize/settings/header/theme-header/cart.php';
+		}
+		
+
 		require NEWSAIR_THEME_DIR . '/inc/ansar/customize/settings/theme-options.php';
 		require NEWSAIR_THEME_DIR . '/inc/ansar/customize/settings/theme-layout.php';
 		require NEWSAIR_THEME_DIR . '/inc/ansar/customize/settings/frontpage-featured-story.php';

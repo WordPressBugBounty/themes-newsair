@@ -191,7 +191,7 @@ li[id*= "accordion-panel-"]::before {
   display: block;
   padding-left: 10px;
 }
-li#accordion-section-header_options::before {
+li#accordion-panel-topbar_option_panel::before {
   content: 'Header Options';
 }
 li#accordion-panel-general_option_panel::before {

@@ -1,6 +1,6 @@
 <?php
 
-function newsup_customize_options() {
+function newsair_customize_options() {
 
   // Initialize string
   $newsair_custom_css = '';

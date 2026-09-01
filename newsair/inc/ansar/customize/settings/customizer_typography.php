@@ -16,7 +16,7 @@ $wp_customize->add_setting( 'enable_custom_typography',
         'sanitize_callback' => 'newsair_sanitize_checkbox'
     )
 ); 
-$wp_customize->add_control( new newsair_Toggle_Control( $wp_customize, 'enable_custom_typography',
+$wp_customize->add_control( new Newsair_Toggle_Control( $wp_customize, 'enable_custom_typography',
     array(
         'label' => esc_html__( 'Typography Enable/Disable','newsair'),
         'section' => 'newsair_typography_setting'
@@ -29,7 +29,7 @@ $wp_customize->add_setting('newsair_site_title_font',
     )
 );
 $wp_customize->add_control(
-    new newsair_Section_Title(
+    new Newsair_Section_Title(
         $wp_customize,
         'newsair_site_title_font',
         array(
@@ -83,7 +83,7 @@ $wp_customize->add_setting('newsair_menu_font',
     )
 );
 $wp_customize->add_control(
-    new newsair_Section_Title(
+    new Newsair_Section_Title(
         $wp_customize,
         'newsair_menu_font',
         array(

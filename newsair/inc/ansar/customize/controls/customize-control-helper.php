@@ -122,7 +122,6 @@ class WP_line_break_Customize_Control extends WP_Customize_Control {
     }
 }
 
-
 class Newsair_Custom_Radio_Default_Image_Control extends WP_Customize_Control {
         
     /**
@@ -192,5 +191,19 @@ class Newsair_Custom_Radio_Default_Image_Control extends WP_Customize_Control {
         </div>
         <script>jQuery(document).ready(function($) { $( '[id="input_<?php echo $this->id; ?>"]' ).buttonset(); });</script>
         <?php
+    }
+}
+//Pro Button
+class newsair_social_section_upgrade extends WP_Customize_Control {
+    public function render_content() { ?>
+        <div class="upgrade-to-pro-box customizer_newsair_social_upgrade_to_pro" style="display: none;">
+            <h3 class="upgrade-to-pro-title">
+            <span class="title"><span class="dashicons dashicons-warning"></span><?php esc_html_e('To Add More','newsair'); ?></span><br>
+                <a class="btn" href="<?php echo esc_url( 'https://themeansar.com/themes/newsair-pro/' ); ?>" target="_blank">
+                    <?php esc_html_e('Upgrade to Pro','newsair'); ?> 
+                </a>  
+            </h3>
+        </div>
+    <?php
     }
 }
