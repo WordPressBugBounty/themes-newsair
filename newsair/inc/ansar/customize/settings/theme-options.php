@@ -110,6 +110,19 @@ $wp_customize->add_control('enable_pages_bcrumb',
         'type' => 'checkbox',
     )
 );
+$wp_customize->add_setting('enable_woo_bcrumb',
+    array(
+        'default' => true,
+        'sanitize_callback' => 'newsair_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('enable_woo_bcrumb',
+    array(
+        'label' => esc_html__('WooCommerce', 'newsair'),
+        'section' => 'newsair_breadcrumb_settings',
+        'type' => 'checkbox',
+    )
+);
 
 
 //Type Of Bredcrumb 
