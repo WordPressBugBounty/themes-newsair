@@ -27,6 +27,10 @@ function newsair_scripts() {
 
 	wp_enqueue_style('newsair-custom-css', get_template_directory_uri() . '/inc/ansar/customize/css/customizer.css', array(), '1.0', 'all');
 
+	if (class_exists('WooCommerce')) {
+		wp_enqueue_style('woocommerce-style', NEWSAIR_THEME_URI . 'css/woocommerce.css', array(), NEWSAIR_THEME_VERSION );
+	}
+
 	/* Js script */
 
 	wp_enqueue_script( 'newsair-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'));
