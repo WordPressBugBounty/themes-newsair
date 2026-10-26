@@ -4,8 +4,8 @@ Theme URI: https://themeansar.com/free-themes/newsair-free-magazine-blog-wordpre
 Author: Themeansar
 Author URI: http://themeansar.com
 Description: Newsair WordPress theme ideal for a business or blog website (corporate, Consulting, Advisor, Agency, Finance, law, Photography etc.). You can also use for anything. It comes with all features these kind of shop page, blog page.The theme you can use for any business website.
-Version: 2.4.4
-Tested up to: 7.0
+Version: 2.4.5
+Tested up to: 7.1
 Requires PHP: 7.4
 Requires at least: 6.7
 Tags: two-columns, three-columns, left-sidebar, right-sidebar, translation-ready, custom-background, custom-logo, featured-images, footer-widgets, full-width-template, blog, e-commerce, entertainment
@@ -580,6 +580,9 @@ blockquote p {
 .single-nav-links {
 	text-align: center;
 	margin-top: 30px;
+}
+.single-related-post .col-md-4:nth-child(3) .bs-blog-post {
+	margin-bottom: 0;
 }
 .nav-links {
 	display: flex;
@@ -2450,12 +2453,12 @@ footer .small-post-list-widget .small-post:nth-child(3) {
 	list-style: none;
 	padding: 30px 0;
 	justify-content: center;
-	margin-top: 10px;
 }
 .post-share-icons a {
 	width: 36px;
 	height: 36px;
 	margin-right: 0.538rem;
+	margin-top: 10px;
 	text-align: center;
 	line-height: 36px;
 	position: relative;
@@ -2473,9 +2476,6 @@ footer .small-post-list-widget .small-post:nth-child(3) {
 /*----- blog-post meta -----*/
 .bs-blog-post .bs-blog-meta {
 	margin-bottom: 20px;
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
 }
 .bs-post-meta a {
 	display: inline-block;
@@ -2579,9 +2579,6 @@ footer .small-post-list-widget .small-post:nth-child(3) {
 }
 .bs-info-author-block.py-4.px-3.mb-4 {
 	border-radius: 5px;
-}
-.bs-info-author-block .bs-blog-meta span a {
-	display: inline-block;
 }
 .bs-info-author-block .bs-author-desc {
 	margin-bottom: 0;
@@ -3292,7 +3289,6 @@ footer ul.menu li.menu-item::before {
 	font-weight: 900;
 	margin-left: 10px;
 	margin-right: auto;
-	display: inline-block;
 }
 footer .bs-widget .sub-menu {
 	padding-right: 20px;
@@ -3560,8 +3556,8 @@ form .wp-block-search__inside-wrapper {
 	font-size: 20px;
 	line-height: 1.2;
 	display: inline-flex;
-	font-family: var(--headFont);
 	width: auto;
+	font-family: var(--headFont);
 }
 .widget_block h2 {
 	margin-bottom: 20px;
@@ -3775,6 +3771,9 @@ footer .bs-widget-title .title:before {
 	}
 	.missedslider {
 		grid-template-columns: repeat(2, minmax(0, 1fr))
+	}
+	body.dark .bs-default .is-sticky .bs-menu-full {
+		box-shadow: var(--bxshover);
 	}
 	.nav.navbar-nav:not(.sm-collapsible) .menu-item-has-children .nav-link:before,
 	.nav-link.has-submenu:before {
