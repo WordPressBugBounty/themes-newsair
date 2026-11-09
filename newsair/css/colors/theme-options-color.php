@@ -50,9 +50,9 @@ function theme_options_color() {
  
 function custom_typography_function() { ?>
 	<style>	:root{
-		--title-font: <?php echo esc_attr(get_theme_mod('site_title_fontfamily','Inter Tight')); ?>;
-		--title-weight: <?php echo esc_attr(get_theme_mod('site_title_fontweight','700')); ?>;
-		--menus-font: <?php echo esc_attr(get_theme_mod('newsair_menu_fontfamily','Inter Tight')); ?>;
+		--title-font: <?php echo esc_attr(newsair_get_option('site_title_fontfamily')); ?>;
+		--title-weight: <?php echo esc_attr(newsair_get_option('site_title_fontweight')); ?>;
+		--menus-font: <?php echo esc_attr(newsair_get_option('newsair_menu_fontfamily')); ?>;
 	}
 
 	.site-branding-text p, .bs-default .site-branding-text .site-title, .bs-default .site-branding-text .site-title a{

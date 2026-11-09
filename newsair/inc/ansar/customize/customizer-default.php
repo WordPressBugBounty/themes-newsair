@@ -124,6 +124,15 @@ function newsair_get_default_theme_options() {
     $defaults['newsair_theme_sidebar_width'] = wp_json_encode( array( 'desktop' => 33, 'desktop_unit' => '%', ) );
     $defaults['newsair_single_page_sidebar_width'] = wp_json_encode( array( 'desktop' => 25, 'desktop_unit' => '%', ) );
     
+    // Typography.
+    // Body
+    $defaults['site_title_fontfamily'] = 'Inter Tight';
+    $defaults['site_title_fontweight'] =  '700';
+
+    // Meus
+    $defaults['newsair_menu_fontfamily'] = 'Inter Tight';
+
+
     // filter.
     $defaults = apply_filters('newsair_filter_default_theme_options', $defaults);
 

@@ -46,10 +46,10 @@ $font_weight = array('300' => '300', '500' => '500', '600' => '600', '700' => '7
 $wp_customize->add_setting(
     'site_title_fontfamily',
     array(
-        'default'           =>  'Inter Tight',
+        'default'           =>  $newsair_default['site_title_fontfamily'],
         'capability'        =>  'edit_theme_options',
         'sanitize_callback' =>  'sanitize_text_field',
-        'transport' => 'postMessage',
+        'transport'         => 'refresh',
     )   
 );
 $wp_customize->add_control('site_title_fontfamily', array(
@@ -63,10 +63,10 @@ $wp_customize->add_control('site_title_fontfamily', array(
 $wp_customize->add_setting(
     'site_title_fontweight',
     array(
-        'default'           =>  '700',
+        'default'           =>  $newsair_default['site_title_fontweight'],
         'capability'        =>  'edit_theme_options',
         'sanitize_callback' =>  'sanitize_text_field',
-        'transport' => 'postMessage',
+        'transport'         => 'refresh',
     )   
 );
 $wp_customize->add_control('site_title_fontweight', array(
@@ -96,10 +96,10 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'newsair_menu_fontfamily',
     array(
-        'default'           =>  'Inter Tight',
+        'default'           =>  $newsair_default['newsair_menu_fontfamily'],
         'capability'        =>  'edit_theme_options',
         'sanitize_callback' =>  'sanitize_text_field',
-        'transport' => 'postMessage',
+        'transport'         => 'refresh',
     )   
 );
 $wp_customize->add_control('newsair_menu_fontfamily', array(

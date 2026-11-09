@@ -22,7 +22,7 @@
 	require( $newsair_theme_path . '/font/font.php');
 	require( $newsair_theme_path . '/template-tags.php');
 	require( $newsair_theme_path . '/template-functions.php');
-	require( $newsair_theme_path. '/widgets/widgets-common-functions.php');
+	require( $newsair_theme_path.  '/widgets/widgets-common-functions.php');
 	require( $newsair_theme_path . '/custom-control/custom-control.php');
 	require( $newsair_theme_path . '/custom-control/font/font-control.php');
 	require_once get_template_directory() . '/inc/ansar/customizer-admin/newsair-admin-plugin-install.php';
@@ -149,8 +149,8 @@ function newsair_setup() {
 	) );
 
 	$args = array(
-    'default-color' => '#eee',
-    'default-image' => '',
+		'default-color' => '#eee',
+		'default-image' => '',
 	);
 	add_theme_support( 'custom-background', $args );
 
@@ -210,22 +210,17 @@ endif;
 add_action( 'after_setup_theme', 'newsair_setup' );
 
 
-	function newsair_the_custom_logo() {
-	
-		if ( function_exists( 'the_custom_logo' ) ) {
-			the_custom_logo();
-		}
-
+function newsair_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
 	}
+}
 
-	add_filter('get_custom_logo','newsair_logo_class');
-
-
-	function newsair_logo_class($html)
-	{
+function newsair_logo_class($html){
 	$html = str_replace('custom-logo-link', 'navbar-brand', $html);
 	return $html;
-	}
+}
+add_filter('get_custom_logo','newsair_logo_class');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -310,8 +305,6 @@ function newsair_widgets_init() {
 		'before_title'  => '<div class="bs-widget-title"><h2 class="title">',
 		'after_title'   => '</h2></div>',
 	) );
-
-
 }
 add_action( 'widgets_init', 'newsair_widgets_init' );
 
