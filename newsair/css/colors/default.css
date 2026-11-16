@@ -384,7 +384,7 @@ a:focus {
 .youtube+.icon-soci-content .bs-count {
 	background: #cd201f;
 }
-.pinterest,
+.pinterest, .post-share-icons .pinterest-p,
 .pinterest+.icon-soci-content .bs-count {
 	background: #bd081c;
 }

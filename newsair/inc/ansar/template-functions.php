@@ -14,14 +14,15 @@
  */
 function newsair_body_classes($classes) {
     // Adds a class of hfeed to non-singular pages.
+
+    global $post;
+
     if (!is_singular()) {
         $classes[] = 'hfeed';
     }
 
-
     $global_site_mode_setting = newsair_get_option('global_site_mode_setting');
     $classes[] = $global_site_mode_setting;
-
 
     $single_post_featured_image_view = newsair_get_option('single_post_featured_image_view');
     if ($single_post_featured_image_view == 'full') {
@@ -32,8 +33,6 @@ function newsair_body_classes($classes) {
     if ($global_hide_post_date_author_in_list == true) {
         $classes[] = 'ta-hide-date-author-in-list';
     }
-
-    global $post;
 
     $global_alignment = newsair_get_option('newsair_content_layout');
     $page_layout = $global_alignment;
@@ -106,7 +105,6 @@ if (!function_exists('newsair_get_posts')):
 
 endif;
 
-
 /**
  * Returns no image url.
  *
@@ -148,7 +146,6 @@ if (!function_exists('newsair_get_block')) :
      */
     function newsair_get_block($block = 'grid', $section = 'post') {
         get_template_part('inc/ansar/hooks/blocks/block-' . $section, $block);
-
     }
 endif;
 
@@ -289,7 +286,6 @@ function newsair_list_popular_taxonomies($taxonomy = 'post_tag', $title = "Top T
         echo $html;
     }
 }
-
 
 /**
  * @param $post_id
