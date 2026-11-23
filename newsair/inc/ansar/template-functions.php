@@ -869,6 +869,25 @@ if ( class_exists( 'WooCommerce' ) ) {
     }
     add_filter( 'woocommerce_pagination_args', 'newsair_custom_pagination_icons' );
 
+    add_filter( 'woocommerce_sale_flash', 'newsair_woocommerce_sale_flash', 10, 3 );
+
+    function newsair_woocommerce_sale_flash( $html, $post, $product ) {
+
+        if ( $product->is_type( 'variable' ) ) {
+            $regular_price = (float) $product->get_variation_regular_price( 'min' );
+            $sale_price = (float) $product->get_variation_sale_price( 'min' );
+        } else {
+            $regular_price = (float) $product->get_regular_price();
+            $sale_price = (float) $product->get_sale_price();
+        }
+
+        if ( $regular_price > 0 && $sale_price > 0 && $regular_price > $sale_price ) {
+            $percentage = round( ( ( $regular_price - $sale_price ) / $regular_price ) * 100 );
+            return '<span class="onsale">' . esc_html( $percentage ) . '% OFF</span>';
+        }        
+        return $html;
+    }
+
     /* Change WooCommerce Gallery Thumbnails to 5 Columns */
     function newsair_change_product_gallery_columns() {
         return 5; 

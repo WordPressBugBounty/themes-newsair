@@ -4,8 +4,8 @@ Author: Themeansar
 Requires at least: WordPress 6.7
 Tested up to: WordPress 7.1
 Requires PHP: 7.4
-Stable tag: 2.4.7
-Version: 2.4.7
+Stable tag: 2.4.8
+Version: 2.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets,  theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, news
@@ -573,3 +573,6 @@ Source: https://stocksnap.io/photo/train-station-6FHSE43K4R
 = Version 2.4.7
 * Improved Author Info widget media uploader with image removal support.
 * Fixed PHP 8.1+ warnings and deprecated notices in Author Info widget.
+
+= Version 2.4.8
+* Improved WooCommerce sale badge to show percentage discounts.
